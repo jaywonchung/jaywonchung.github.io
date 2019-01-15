@@ -2,7 +2,7 @@
 layout: single
 title: "C++ tips for algorithm problem-solving"
 categories: 
-	- study algorithm
+  - study algorithm
 ---
 Tools, tricks, and snippets are introduced for implementing algorithms. Some may be inappropriate in terms of good coding practice because these snippets are optimized for efficiency during competitive problem-solving.
 
