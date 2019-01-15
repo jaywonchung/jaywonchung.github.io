@@ -74,10 +74,10 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
-google_site_verification : "google744064dc20afaafc.html"
+google_site_verification : "google744064dc20afaafc"
 bing_site_verification   :
 yandex_site_verification :
-naver_site_verification  : "naverfaf50514275b4d54adbfac4f78e409ba.html"
+naver_site_verification  : "naverfaf50514275b4d54adbfac4f78e409ba"
 
 # Social Sharing
 twitter:
