@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-Kr"
-title                    : "강아지는 멍멍 컴퓨터는 댕댕"
+title                    : "강아지는 멍멍\n컴퓨터는 댕댕"
 title_separator          : "|"
 name                     : "Jaewon Chung"
 description              : "공부하며 쓰는 컴퓨터 블로그"
