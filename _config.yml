@@ -188,7 +188,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
 markdown: kramdown
-#highlighter: rouge
+highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
@@ -204,14 +204,6 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
 
 
 # Sass/SCSS
