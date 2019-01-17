@@ -12,7 +12,7 @@ Tools, tricks, and snippets are introduced for implementing algorithms. Some may
 
 Arrays are an important tool for storing sequential data. Also, a lot of problems are solved with dynamic programming, where arrays are a core tool. 
 
-### Initializing an array with a single value
+## Initializing an array with a single value
 
 1. For loop
 
