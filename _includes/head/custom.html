@@ -7,16 +7,16 @@
   });
 </script>
 <script type="text/javascript">
-  function resize_MathJax() {
+  MathJax.Hub.Register.StartupHook("End",function () {
     var math_list = document.getElementsByClassName("MathJax_Display");
     var W = document.getElementsByClassName("page__content")[0].offsetWidth;
     for (var i = 0; i < math_list.length; ++i) {
       var w = math_list[i].childNodes[0].offsetWidth;
-      if (w > 1) {
-        math_list[i].style.fontSize = "50%";
+      if (w > 0.95*W) {
+        math_list[i].style.fontSize = (95*W/w)+"%";
       }
     }
-  };
+  });
 </script>
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
