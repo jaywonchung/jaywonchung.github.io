@@ -7,20 +7,14 @@
   });
 </script>
 <script type="text/javascript">
-  window.MathJax = {
-    AuthorInit: function () {
-      MathJax.Hub.Register.StartupHook("Begin",function () {
-        MathJax.Hub.Queue(function () {
-          var math_list = document.getElementsByClassName("MathJax_Display");
-          var W = document.getElementsByClassName("Page__Content")[0].offsetWidth;
-          for (var i = 0; i < math_list.length; ++i) {
-            var w = math_list[i].childNodes[0].offsetWidth;
-            if (w > W*0.95) {
-              math_list[i].style.fontSize = (95*W/w)+"%";
-            }
-          }
-        });
-      });
+  function resize_MathJax() {
+    var math_list = document.getElementsByClassName("MathJax_Display");
+    var W = document.getElementsByClassName("page__content")[0].offsetWidth;
+    for (var i = 0; i < math_list.length; ++i) {
+      var w = math_list[i].childNodes[0].offsetWidth;
+      if (w > W*0.95) {
+        math_list[i].style.fontSize = (95*W/w)+"%";
+      }
     }
   };
 </script>
