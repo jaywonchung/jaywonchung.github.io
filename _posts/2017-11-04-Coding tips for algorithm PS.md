@@ -1,5 +1,6 @@
 ---
 title: "C++ tips for algorithm problem-solving"
+excerpt: "Tools, tricks, and snippets for efficiently implementing algorithms."
 categories: 
   - study
   - algorithm
@@ -44,26 +45,44 @@ Arrays are an important tool for storing sequential data. Also, a lot of problem
 4. Instead using ```std::vector```
 
 	```c++
-	std::vector<int> v(n, -1); // #include <vector>
+	vector<int> v(n, -1); // #include <vector>
 	```
 	Using vectors is a preferable in many cases, especially when the size of the array varies. For instance, it is a good idea to initialize graphs with ```vector<vector<int>> graph(n);``` as an adjacency list. This done, you can easily traverse adjacent nodes with the following range-based for loop:
 	```c++
 	for (int adj_node : graph[curr_node])
 	```
 
-5. Testing color scheme
+## Array Indexing
 
-	```python
-	import torch.nn as nn
-	
-	class CNN(nn.Modules):
-	""" Called a CNN but actually a NN """
-		def __init__(self, input_dim, output_dim):
-			self.input_dim = input_dim
-			self.output_dim = output_dim
-			self.fc = nn.Linear(input_dim, output_dim)
-			nn.functionals.Kaiming_Normal_(self.fc.weights)
+1. Single dimensional array
 
-		def forward(self, x):
-			return nn.ReLU(fc(x))	# not CNN
+	```c++
+	int a[50];
+	for (int i=0; i<50; ++i) {
+		scanf("%d", a+i);
+	}
 	```
+	The pointer of an array element can be written simpler.
+	```c++
+	for (int i=0; i<n; ++i) {
+		printf("%c%d%c", " ["[i==0], a[i], ",]"[i==n-1]);
+	}
+	```
+	This snippet prints array ```a``` python-style: ```[0, 1, 2, 3, 4]```
+
+2. Two dimensional array
+
+	```c++
+	printf("%d\n", *max_element(d[0], d[0]+n));	// #include <algorithm>
+	```
+	The element of a two dimensional array is a pointer to a single dimensional array. Thus the same trick can be applied.
+
+# Standard Input and Output
+## Avoid using ```cin``` and ```cout```
+For algorithm problems, small time can make a difference. Especially if you're reading somthing like $$n^2$$ integers from standard input, using ```cin``` can give you a TLE(Time Limit Exceeded). Use ```scanf``` for inputs and ```printf``` for outputs.
+
+## Use text files for standard input
+Typing in the same sample inputs every time you run your code is apparently inefficient. When compiling and running your code, you can provide "input.txt" as a standard input using the above shell command. You can read data with your ordinary standard i/o functions.
+```bash
+g++ -O2 -std=c++14 main.cpp -o main && ./main < input.txt
+```
