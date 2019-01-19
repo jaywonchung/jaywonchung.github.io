@@ -6,7 +6,6 @@ div.highlighter-rouge,
 figure.highlight {
   position: relative;
   margin-bottom: 1em;
-  color: #f8f8f8;
   background: #272822;
   font-family: 'Source Code Pro', monospace;
   font-size: $type-size-6;
@@ -18,6 +17,10 @@ figure.highlight {
     margin: 0;
     padding: 1em;
   }
+}
+
+code {
+   color: #f8f8f8;
 }
 
 .highlight table {
