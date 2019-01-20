@@ -1,11 +1,10 @@
 ---
 title: "Why is this DP?"
-layout: single
+excerpt: "Identifying a problem as a dynamic programming problem may be the most difficult part."
 categories:
   - study
   - algorithm
- excerpt: "Identifying a problem as a dynamic programming problem may be the most difficult part."
- ---
+---
  
 The three steps of solving a problem with DP:
 1. Find important variables in the problem. The number of variables is the dimension of the array.
