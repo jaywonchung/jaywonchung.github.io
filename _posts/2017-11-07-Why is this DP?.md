@@ -166,48 +166,48 @@ Since we need to find the answer to the small problem, we will have to split the
 	int d[500][500];
 
 	int sum(int a, int b) {
-	    if (a==0) return s[b];
-	    else return s[b]-s[a-1];
+		if (a==0) return s[b];
+		else return s[b]-s[a-1];
 	}
 
 	int main()
 	{
-	    int T; scanf("%d", &T);
-	    while (T--) {
-		int n; scanf("%d", &n);
-		for (int i=0; i<n; ++i) {
-			scanf("%d", a+i);
-		}
-
-		s[0] = a[0];
-		for (int i=1; i<n; ++i) {
-			s[i] = s[i-1]+a[i];
-		}
-
-		for (int i=0; i<n; ++i) {
-		    for (int j=0; j<n; ++j) {
-			d[i][j] = 0;
-		    }
-		}
-
-		for (int i=0; i<n-1; ++i) {
-			d[i][i+1] = a[i]+a[i+1];
-		}
-
-		for (int l=2; l<n; ++l) {
-		    for (int i=0; i<n-l; ++i) {
-			for (int j=0; j<l; ++j) {
-			    if (d[i][i+l]==0 || d[i][i+l]>d[i][i+j]+d[i+j+1][i+l]+sum(i, i+l)) {
-				d[i][i+l] = d[i][i+j]+d[i+j+1][i+l]+sum(i, i+l);
-			    }
+		int T; scanf("%d", &T);
+		while (T--) {
+			int n; scanf("%d", &n);
+			for (int i=0; i<n; ++i) {
+				scanf("%d", a+i);
 			}
-		    }
-		}
 
-		printf("%d\n", d[0][n-1]);
-	    }
+			s[0] = a[0];
+			for (int i=1; i<n; ++i) {
+				s[i] = s[i-1]+a[i];
+			}
 
-	    return 0;
+			for (int i=0; i<n; ++i) {
+				for (int j=0; j<n; ++j) {
+					d[i][j] = 0;
+				}
+			}
+
+			for (int i=0; i<n-1; ++i) {
+				d[i][i+1] = a[i]+a[i+1];
+			}
+
+			for (int l=2; l<n; ++l) {
+				for (int i=0; i<n-l; ++i) {
+					for (int j=0; j<l; ++j) {
+						if (d[i][i+l]==0 || d[i][i+l]>d[i][i+j]+d[i+j+1][i+l]+sum(i, i+l)) {
+							d[i][i+l] = d[i][i+j]+d[i+j+1][i+l]+sum(i, i+l);
+						}
+					}
+				}
+			}
+
+			printf("%d\n", d[0][n-1]);
+	    	}
+
+		return 0;
 	}
 	```
 
@@ -229,38 +229,38 @@ Since we need to find the answer to the small problem, we will have to split the
 	long long d[21];
 
 	long long comb(int n, int k) {
-	    if (k>n) return 0;
-	    if (k*2>n) k = n-k;
-	    if (k==0) return 1;
+		if (k>n) return 0;
+		if (k*2>n) k = n-k;
+		if (k==0) return 1;
 
-	    int ret = n;
-	    for (int i=2; i<=k; ++i) {
-		ret *= (n-i+1);
-		ret /= i;
-	    }
-	    return ret;
+		int ret = n;
+		for (int i=2; i<=k; ++i) {
+			ret *= (n-i+1);
+			ret /= i;
+		}
+		return ret;
 	}
 
 	long long go(int n) {
-	    if (n<=2) return n;
-	    if (d[n]) return d[n];
+		if (n<=2) return n;
+		if (d[n]) return d[n];
 
-	    d[n] = go(n-1) + (n-1)*go(n-2);
-	    for (int i=2; i<n-2; ++i) {
-		d[n] += comb(n-1, i)*(go(i)/2)*(go(n-i-1)/2);
-	    }
+		d[n] = go(n-1) + (n-1)*go(n-2);
+		for (int i=2; i<n-2; ++i) {
+			d[n] += comb(n-1, i)*(go(i)/2)*(go(n-i-1)/2);
+		}
 
-	    return d[n];
+		return d[n];
 	}
 
 	int main()
 	{
-	    int T; scanf("%d", &T);
-	    while (T--) {
-		int n; scanf("%d", &n);
-		printf("%lld\n", go(n));
-	    }
+		int T; scanf("%d", &T);
+		while (T--) {
+			int n; scanf("%d", &n);
+			printf("%lld\n", go(n));
+		}
 
-	    return 0;
+		return 0;
 	}
 	```
