@@ -212,6 +212,7 @@ Since we need to find the answer to the small problem, we will have to split the
 	```
 
 - [3948번: 홍준이의 친위대](https://icpc.me/3948)
+
 	For some problems, we can find a pivot that we can use to split the problem. In #3948, the tallest soldier is the pivot. The position of the tallest soldier can be categorized as leftmost, rightmost, and in between. When the tallest soldier is in between, the left and right side of him becomes the small problem. One difference from the large problem is that on the left small problem, the rightmost soldier should be smaller than his left companion. This is exactly half of the whole problem. 
 
 	problem formulation:
