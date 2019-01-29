@@ -10,7 +10,7 @@ categories:
 # Autoencoders(AE)
 ## Structure
 ![Autoencoders](/assets/images/posts/2019-01-29-AE.png)
-(https://www.slideshare.net/NaverEngineering/ss-96581209)
+([https://www.slideshare.net/NaverEngineering/ss-96581209](https://www.slideshare.net/NaverEngineering/ss-96581209))
 
 As seen in the above structure, autoencoders have the same input and output size. Ultimately we want the output to be the same as the input. We penalize the difference of the input $$x$$ and the output $$y$$.
 
@@ -45,7 +45,7 @@ where $$q^0(X)$$ denotes the empirical distribution associated with our $$N$$ tr
 # Denoising Autoencoders(DAE)
 ## Structure
 ![Denoising Autoencoders](/assets/images/posts/2019-01-29-DAE.png)
-(https://www.slideshare.net/NaverEngineering/ss-96581209)
+([https://www.slideshare.net/NaverEngineering/ss-96581209](https://www.slideshare.net/NaverEngineering/ss-96581209))
 
 With the encoder and decoder formula the same, denoising autoencoders intentionally drop a specific portion of the pixels of the input $$ x $$ to zero, creating $$ \tilde{x} $$. Formally, we are sampling $$ \tilde{x} $$ from a stochastic mapping $$ q_D(\tilde{x}\vert x) $$. The loss is computed between the original $$ x $$ and the output $$ y $$.
 
