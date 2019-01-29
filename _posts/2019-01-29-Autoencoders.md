@@ -13,7 +13,7 @@ categories:
 
 As seen in the above structure, autoencoders have the same input and output size. Ultimately we want the output to be the same as the input. We penalize the difference of the input $$x$$ and the output $$y$$.
 
-We can formulate the simplist autoencoder (with a single fully connected layer at each side) as follows:
+We can formulate the simplest autoencoder (with a single fully connected layer at each side) as follows:
 
 $$x, y \in [0,1]^d$$
 
