@@ -105,7 +105,7 @@ KL divergences are always non-negative, and we want to minimize it with respect 
 
 ## ELBO
 
-Let's take a closer look at the $$ \text{ELBO} $$ term. Since no two input images share the same latent variable $$ z $$, we can write $$ \text{ELBO}_i (\lambda) $$ for a single input images $$ x_i $$.
+Let's take a closer look at the $$ \text{ELBO} $$ term. Since no two input images share the same latent variable $$ z $$, we can write $$ \text{ELBO}_i (\lambda) $$ for a single input image $$ x_i $$.
 
 $$ \begin{aligned}
 \text{ELBO}_i (\lambda)  
@@ -134,4 +134,14 @@ $$ l_i(\phi, \theta) = -\underline{\mathbb{E}_{q_\phi} \left[ \log(p_\theta(x_i 
 
 The first underlined part (excluding the negative sign) is to be maximized. This is called the reconstruction loss: how similar the reconstructed image is to the input image. For each latent variable $$ z $$ we sample from the approximated posterior $$ q_\phi(z \vert x_i) $$, we calculate the log-likelihood of the decoder producing $$ x_i $$. Thus maximizing this term is equivalent to the maximum likelihood estimation.
 
-The second term is the Kullback-Leibler Divergence between the approximated posterior $$ q_\phi(z \vert x_i) $$ and the prior $$ p(z) $$. This acts as a regularizer, forcing the approximated posterior to be similar to the prior distribution, which is a standard normal distribution. 
+The second term is the Kullback-Leibler Divergence between the approximated posterior $$ q_\phi(z \vert x_i) $$ and the prior $$ p(z) $$. This acts as a regularizer, forcing the approximated posterior to be similar to the prior distribution, which is a standard normal distribution.
+
+![Learned Manifold](/assets/images/posts/2019-01-29-Learned-Manifold.jpg)
+
+The above plots 2-dimensional latent variables of 500 test images for an AE and a VAE. As you can see, the distribution of latent variables of VAEs are close to the standard normal distribution, which is due to the regularizer. This is a virtue because with this property, we can just easily sample a vector $$ z $$ from the standard normal distribution and feed it to the decoder network to generate a reasonable image. This is ideal because VAEs were intended as a generator in the first place.
+
+## Calculating the loss function
+
+To train our VAE, we should be able to calculate the loss. Let's start with the regularizer term.
+
+![Gaussian Encoder](/../assets/images/posts/2019-01-29-DAE.png)
