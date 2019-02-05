@@ -1,7 +1,7 @@
 ---
 title: "Autoencoders, Denoising Autoencoders, and Variational Autoencoders"
 layout: single
-excerpt: "Autoencoders(AE), denoising autoencoders(DAE), and variational autoencoders(VAE). Previous post on bayesian statistics may help your understanding."
+excerpt: "AE, DAE, and VAE explained. Previous post on bayesian statistics may help your understanding."
 categories:
   - study
   - machine-learning
@@ -12,7 +12,6 @@ Vanilla autoencoders(AE), denoising autoencoders(DAE), and variational autoencod
 # Autoencoders(AE)
 ## Structure
 ![Autoencoders](/assets/images/posts/2019-01-29-AE.png)
-([https://www.slideshare.net/NaverEngineering/ss-96581209](https://www.slideshare.net/NaverEngineering/ss-96581209))
 
 As seen in the above structure, autoencoders have the same input and output size. Ultimately we want the output to be the same as the input. We penalize the difference of the input $$ x $$ and the output $$ y $$.
 
@@ -47,7 +46,6 @@ where $$ q^0(X) $$ denotes the empirical distribution associated with our $$ N $
 # Denoising Autoencoders(DAE)
 ## Structure
 ![Denoising Autoencoders](/assets/images/posts/2019-01-29-DAE.png)
-([https://www.slideshare.net/NaverEngineering/ss-96581209](https://www.slideshare.net/NaverEngineering/ss-96581209))
 
 With the encoder and decoder formula the same, denoising autoencoders intentionally drop a specific portion of the pixels of the input $$ x $$ to zero, creating $$ \tilde{x} $$. Formally, we are sampling $$ \tilde{x} $$ from a stochastic mapping $$ q_D(\tilde{x}\vert x) $$. The loss is computed between the original $$ x $$ and the output $$ y $$.
 
@@ -142,6 +140,60 @@ The above plots 2-dimensional latent variables of 500 test images for an AE and 
 
 ## Calculating the loss function
 
-To train our VAE, we should be able to calculate the loss. Let's start with the regularizer term.
+To train our VAE, we should be able to calculate the loss. Let's start with the **regularizer** term.
 
-![Gaussian Encoder](/../assets/images/posts/2019-01-29-DAE.png)
+![Gaussian Encoder](/assets/images/posts/2019-01-31-Gaussian-Encoder.jpg)
+
+We create our encoder network such that it calculates the mean and standard variation of $$ q_\phi(z \vert x_i) $$. We then sample vector $$ z $$ from this Multivariate Gaussian distribution: $$ z \sim \mathcal{N}(\mu, \sigma^2 I) $$. 
+
+The KL divergence between two normal distributions is [known](https://en.wikipedia.org/wiki/Kullback–Leibler_divergence#Multivariate_normal_distributions). The regularizer term can be calculated as follows.
+
+$$ D_{KL}(q_\phi(z \vert x_i) \vert \vert p(z)) = \frac{1}{2}\sum_{i=1}^J \left( \mu_{i.j}^2 + \sigma_{i,j}^2 - \log(\sigma_{i,j}^2)-1\right)$$
+
+Now let's look at the **reconstruction loss** term. To calculate the log-likelihood of our image $$ \log(p_\theta(x_i \vert z)) $$, we should choose how to model our output. We have two choices.
+
+1. Multivariate Bernoulli Distribution  
+   ![Bernoulli Decoder](/assets/images/posts/2019-01-31-Bernoulli-Decoder.jpg)
+
+   This is often reasonable for black and white images like those from MNIST. We binarize the training and testing images with threshold 0.5. This can be easily implemented using pytorch:
+
+   ```python
+   image = (image >= 0.5).float()
+   ```
+
+   Each output of the decoder corresponds to a single pixel of the image, denoting the probability of the pixel being white. Then we can use the Bernoulli probability mass funtion $$ f(x_{i,j};p_{i,j}) = p_{i,j}^{x_{i,j}} (1-p_{i,j})^{1-x_{i,j}} $$ as our likelihood.
+
+   $$ \begin{aligned}
+   \log p(x_i \vert z) 
+   &= \sum_{j=1}^D \log(p_{i,j}^{x_{i,j}} (1-p_{i,j})^{1-x_{i,j}}) \\
+   &= \sum_{j=1}^D \left[x_{i,j} \log(p_{i,j}) + (1-x_{i,j})\log(1-p_{i,j}) \right]
+   \end{aligned}$$
+
+   This is equivalent to the cross entropy loss.
+
+2. Multivariate Gaussian Distribution  
+   ![Gaussian Decoder](/assets/images/posts/2019-01-31-Gaussian-Decoder.jpg)
+
+   The probability density funtion of a Gaussian distribution is as follows.
+
+   $$ f(x_{i,j};\mu_{i,j}, \sigma_{i,j}) = \frac{1}{\sqrt{2\pi\sigma_{i,j}^2}}e^{-\frac{(x_{i,j}-\mu_{i,j})^2}{2\sigma_{i,j}^2}} $$
+
+   Using this in our likelihood, 
+
+   $$ \log p(x_i \vert z) = -\sum_{j=1}^D \left[ \frac{1}{2}\log(\sigma_{i,j}^2)+\frac{(x_{i,j}-\mu_{i,j})^2}{2\sigma_{i,j}^2} \right] $$
+
+   Notice that if we fix $$ \sigma_{i,j} = 1 $$, we obtain the square error.
+
+Now that we've calculated the posterior $$ p_\theta(x_i \vert z) $$, we can take a look at the whold reconstruction loss term. Unfortunately, the expectation is difficult to compute since it takes into account every possible $$ z $$. So we use the Monte Carlo approximation of expectation by sampling $$ L $$ $$ z_l $$'s from $$ q_\phi(z \vert x_i) $$ and take their mean log likelihood.
+
+$$ \mathbb{E}_{q_\phi} \left[ \log p_\theta(x_i \vert z) \right] \approx \frac{1}{L} \sum_{l=1}^L \log p_\theta(x_i \vert z_l )$$
+
+For convenience, we use $$ L = 1 $$. 
+
+# Acknowledgements
+
+- Images in this post were borrowed from the following presentation by Hwalsuk Lee.
+
+  [https://www.slideshare.net/NaverEngineering/ss-96581209](https://www.slideshare.net/NaverEngineering/ss-96581209)
+
+- I've implemented everything discussed here. Check out [my github repository](https://github.com/jaywonchung/Learning-ML).
