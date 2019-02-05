@@ -134,7 +134,7 @@ The first underlined part (excluding the negative sign) is to be maximized. This
 
 The second term is the Kullback-Leibler Divergence between the approximated posterior $$ q_\phi(z \vert x_i) $$ and the prior $$ p(z) $$. This acts as a regularizer, forcing the approximated posterior to be similar to the prior distribution, which is a standard normal distribution.
 
-![Learned Manifold](/assets/images/posts/2019-01-29-Learned-Manifold.jpg)
+![Learned Manifold](/assets/images/posts/2019-01-29-Learned-Manifold.JPG)
 
 The above plots 2-dimensional latent variables of 500 test images for an AE and a VAE. As you can see, the distribution of latent variables of VAEs are close to the standard normal distribution, which is due to the regularizer. This is a virtue because with this property, we can just easily sample a vector $$ z $$ from the standard normal distribution and feed it to the decoder network to generate a reasonable image. This is ideal because VAEs were intended as a generator in the first place.
 
