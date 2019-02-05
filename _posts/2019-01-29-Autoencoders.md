@@ -1,18 +1,20 @@
 ---
-title: "Autoencoders and Denoising Autoencoders"
+title: "Autoencoders, Denoising Autoencoders, and Variational Autoencoders"
 layout: single
-excerpt: "Vanilla autoencoders(AE), denoising autoencoders(DAE), and variational autoencoders(VAE) explained. Referring to the previous post on bayesian statistics may help your understanding."
+excerpt: "Autoencoders(AE), denoising autoencoders(DAE), and variational autoencoders(VAE). Previous post on bayesian statistics may help your understanding."
 categories:
   - study
   - machine-learning
 ---
+
+Vanilla autoencoders(AE), denoising autoencoders(DAE), and variational autoencoders(VAE) explained in this post. Referring to the [previous post](https://jaywonchung.github.io/study/machine-learning/MLE-and-ML/) on bayesian statistics may help your understanding.
 
 # Autoencoders(AE)
 ## Structure
 ![Autoencoders](/assets/images/posts/2019-01-29-AE.png)
 ([https://www.slideshare.net/NaverEngineering/ss-96581209](https://www.slideshare.net/NaverEngineering/ss-96581209))
 
-As seen in the above structure, autoencoders have the same input and output size. Ultimately we want the output to be the same as the input. We penalize the difference of the input $$x$$ and the output $$y$$.
+As seen in the above structure, autoencoders have the same input and output size. Ultimately we want the output to be the same as the input. We penalize the difference of the input $$ x $$ and the output $$ y $$.
 
 We can formulate the simplest autoencoder (with a single fully connected layer at each side) as follows:
 
@@ -22,11 +24,11 @@ $$z = h_\theta(x) = \text{sigmoid}(Wx+b) ~~~ (\theta = \{W, b\})$$
 
 $$y = g_{\theta^\prime}(z) = \text{sigmoid}(W^\prime z+b^\prime) ~~~ (\theta = \{W^\prime, b^\prime\})$$
 
-Since we want $$x=y$$, we obtain the following optimization problem:
+Since we want $$ x=y $$, we obtain the following optimization problem:
 
 $$\theta^*, \theta^{\prime *} = \underset{\theta, \theta^\prime}{\text{argmin}} \frac{1}{N} \sum_{i=1}^N l(x^{(i)}, y^{(i)})$$
 
-The $$l(x,y)$$ is the loss function, which calculates the difference between $$x$$ and $$y$$. We can use square error or cross-entropy, which are written as follows:
+The $$ l(x,y) $$ is the loss function, which calculates the difference between $$ x $$ and $$ y $$. We can use square error or cross-entropy, which are written as follows:
 
 $$l(x, y) = \Vert x-y \Vert^2$$
 
@@ -40,7 +42,7 @@ We can view this loss function in terms of expectation:
 
 $$\theta^*, \theta^{\prime *} = \underset{\theta, \theta^\prime}{\text{argmin}} \mathbb{E}_{q^0(X)}[L_H(X, g_{\theta^\prime}(h_\theta(X)))]$$
 
-where $$q^0(X)$$ denotes the empirical distribution associated with our $$N$$ training examples.
+where $$ q^0(X) $$ denotes the empirical distribution associated with our $$ N $$ training examples.
 
 # Denoising Autoencoders(DAE)
 ## Structure
@@ -58,4 +60,78 @@ $$ \begin{aligned}
   &\approx \underset{\theta, \theta^\prime}{\text{argmin}}\frac{1}{N} \sum_{x\in D} \frac{1}{L} \sum_{i=1}^L L_H(x, g_{\theta^\prime}(f_\theta(\tilde{x}_i)))
 \end{aligned} $$
 
-where $$ q^0(X, \tilde{X}) = q^0(X)q_D(\tilde{X}\vert X) $$. Since we cannot compute the expectation in the second line, we approximate it by drawing $$ L $$ samples and computing their mean loss.
+where $$ q^0(X, \tilde{X}) = q^0(X)q_D(\tilde{X}\vert X) $$. Since we cannot compute the expectation in the second line, we approximate it with the Monte Carlo technique by drawing $$ L $$ samples and computing their mean loss.
+
+# Variational Autoencoders(VAE)
+## Structure
+
+VAEs actually have the same network structure with AEs; an encoder that calculates latent variable $$ z $$ and a decoder that generates output image $$ y $$. Also, we train both networks such that the output image the the input image are the same. However, their ultimate goal is what's different. The goal of an autoencoder is to generate the best feature vector $$ z $$ from a given image, whereas the goal of a variational autoencoder is to generate realistic images from vector $$ z $$.
+
+Also, the network structure of AEs and VAEs are not exactly the same. The encoder of an AE directly calculates the latent variable $$ z $$ from the input. On the other hand, the encoder of a VAE calculates the parameters of a Gaussian distribution ( $$ \mu $$ and $$ \sigma $$), where we then sample our $$ z $$ from. This is true for the decoder too. AEs output the image itself, but VAE output parameters for the image pixel distribution. Let us put this more formally.
+
+- **Encoder**  
+  Let a standard normal distribution $$ p(z) $$ be the prior distribution of latenr variable $$ z $$. 
+  Given input image $$ x $$, we have our encoder network calculate the posterior distribution $$ p(z \vert x) $$. Then we sample our latent variable $$ z $$ from the posterior distribution.
+
+- **Decoder**  
+  Given a latent variable $$ z $$, the likelihood of our decoder outputting $$ x $$(the input image) is $$ p(x \vert z) $$. We usually interpret this as a Multivariate Bernoulli, where each pixel of the image corresponds to a dimension.
+
+## The Optimization Problem
+
+We want to sample $$ z $$ from the posterior $$ p(z \vert x) $$, which can be expanded with the Bayes Rule.
+
+$$ p(z \vert x) = \frac{p(x \vert z)p(z)}{p(x)} $$
+
+However $$ p(x) = \int p(x \vert z ) p(z) dz $$, the evidence, is intractable since we need to integrate over all possible $$ z $$. Thus without calculating the posterior $$ p(z \vert x) $$, we'll try to approximate it with a Gaussian distribution $$ q_\lambda (z \vert x) $$. This is called **variational inference**.
+
+Since we want the two distributions $$ q_\lambda (z \vert x) $$ and $$ p(z \vert x) $$ to be similar, we adopt the Kullback-Leibler Divergence and try to minimize it with respect to parameter $$ \lambda $$.
+
+$$ \begin{aligned}
+D_{KL}(q_\lambda(z \vert x) \vert \vert p(z \vert x)) 
+&= \int_{-\infty}^{\infty} q_\lambda (z \vert x)\log \left( \frac{q_\lambda (z \vert x)}{p(z \vert x)} \right) dz\\
+&=\mathbb{E}_q\left[ \log(q_\lambda (z \vert x)) \right] - \mathbb{E}_q \left[ \log (p(z \vert x)) \right] \\
+&=\mathbb{E}_q\left[ \log(q_\lambda (z \vert x)) \right] - \mathbb{E}_q \left[ \log (p(z, x)) \right] + \log(p(x))\\
+\end{aligned}$$
+
+The problem here is that the intractable $$ p(x) $$ term is still present. Now let us write the above equation in terms of $$ \log(p(x)) $$.
+
+$$ \log(p(x)) = D_{KL}(q_\lambda(z \vert x) \vert \vert p(z \vert x)) + \text{ELBO}(\lambda)  $$
+
+where 
+
+$$ \text{ELBO}(\lambda) = \mathbb{E}_q \left[ \log (p(z, x)) \right] - \mathbb{E}_q\left[ \log(q_\lambda (z \vert x)) \right] $$
+
+KL divergences are always non-negative, and we want to minimize it with respect to $$ \lambda $$. This is equivalent to **maximizing the ELBO** with respect to $$ \lambda $$. The abbreviation is revealed: **E**vidence **L**ower **BO**und. This can also be understood as maximizing the evidence $$ p(x) $$, since we want to maximize the probability of getting the exact input image from the output.
+
+## ELBO
+
+Let's take a closer look at the $$ \text{ELBO} $$ term. Since no two input images share the same latent variable $$ z $$, we can write $$ \text{ELBO}_i (\lambda) $$ for a single input images $$ x_i $$.
+
+$$ \begin{aligned}
+\text{ELBO}_i (\lambda)  
+&= \mathbb{E}_q \left[ \log (p(z, x_i)) \right] - \mathbb{E}_q\left[ \log(q_\lambda (z \vert x_i)) \right] \\
+&= \int \log(p(z, x_i)) q_\lambda(z \vert x_i) dz - \int \log(q_\lambda(z \vert x_i))q_\lambda(z \vert x_i) dz \\
+&= \int \log(p(x_i \vert z)p(z)) q_\lambda(z \vert x_i) dz - \int \log(q_\lambda(z \vert x_i))q_\lambda(z \vert x_i) dz \\
+&= \int \log(p(x_i \vert z)) q_\lambda(z \vert x_i) dz - \int q_\lambda(z \vert x_i) \log\left(\frac{q_\lambda(z \vert x_i)}{p(z)}\right)dz \\
+&= \mathbb{E}_q \left[ \log (p(x_i \vert z)) \right] - D_{KL}(q_\lambda(z \vert x_i) \vert \vert p(z))
+\end{aligned}$$
+
+Now shifting our attention back to the network structure, our encdoer network calculates the parameters of $$ q_\lambda(z \vert x_i) $$, and our decoder network calculates the likelihood $$ p(x_i \vert z) $$. Thus we can rewrite the above results so that the parameters match those of the autoencoder described above.
+
+$$ \text{ELBO}_i(\phi, \theta) = \mathbb{E}_{q_\phi} \left[ \log(p_\theta(x_i \vert z)) \right] - D_{KL}(q_\phi(z \vert x_i) \vert \vert p(z))$$
+
+Negating $$ \text{ELBO}_i(\phi, \theta) $$, we obtain our loss function for sample $$ x_i $$.
+
+$$ l_i(\phi, \theta) = -\text{ELBO}_i(\phi, \theta) $$
+
+Thus our optimization problem becomes
+
+$$ \phi^*, \theta^* = \underset{\phi, \theta}{\text{argmin}} \sum_{i=1}^N \left[ -\mathbb{E}_{q_\phi} \left[ \log(p_\theta(x_i \vert z)) \right] + D_{KL}(q_\phi(z \vert x_i) \vert \vert p(z)) \right] $$
+
+## Understanding the loss function
+
+$$ l_i(\phi, \theta) = -\underline{\mathbb{E}_{q_\phi} \left[ \log(p_\theta(x_i \vert z)) \right]} + \underline{D_{KL}(q_\phi(z \vert x_i) \vert \vert p(z))} $$
+
+The first underlined part (excluding the negative sign) is to be maximized. This is called the reconstruction loss: how similar the reconstructed image is to the input image. For each latent variable $$ z $$ we sample from the approximated posterior $$ q_\phi(z \vert x_i) $$, we calculate the log-likelihood of the decoder producing $$ x_i $$. Thus maximizing this term is equivalent to the maximum likelihood estimation.
+
+The second term is the Kullback-Leibler Divergence between the approximated posterior $$ q_\phi(z \vert x_i) $$ and the prior $$ p(z) $$. This acts as a regularizer, forcing the approximated posterior to be similar to the prior distribution, which is a standard normal distribution. 
