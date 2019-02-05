@@ -142,7 +142,7 @@ The above plots 2-dimensional latent variables of 500 test images for an AE and 
 
 To train our VAE, we should be able to calculate the loss. Let's start with the **regularizer** term.
 
-![Gaussian Encoder](/assets/images/posts/2019-01-31-Gaussian-Encoder.jpg)
+![Gaussian Encoder](/assets/images/posts/2019-01-31-Gaussian-Encoder.JPG)
 
 We create our encoder network such that it calculates the mean and standard variation of $$ q_\phi(z \vert x_i) $$. We then sample vector $$ z $$ from this Multivariate Gaussian distribution: $$ z \sim \mathcal{N}(\mu, \sigma^2 I) $$. 
 
@@ -153,7 +153,7 @@ $$ D_{KL}(q_\phi(z \vert x_i) \vert \vert p(z)) = \frac{1}{2}\sum_{i=1}^J \left(
 Now let's look at the **reconstruction loss** term. To calculate the log-likelihood of our image $$ \log(p_\theta(x_i \vert z)) $$, we should choose how to model our output. We have two choices.
 
 1. Multivariate Bernoulli Distribution  
-   ![Bernoulli Decoder](/assets/images/posts/2019-01-31-Bernoulli-Decoder.jpg)
+   ![Bernoulli Decoder](/assets/images/posts/2019-01-31-Bernoulli-Decoder.JPG)
 
    This is often reasonable for black and white images like those from MNIST. We binarize the training and testing images with threshold 0.5. This can be easily implemented using pytorch:
 
@@ -172,7 +172,7 @@ Now let's look at the **reconstruction loss** term. To calculate the log-likelih
    This is equivalent to the cross entropy loss.
 
 2. Multivariate Gaussian Distribution  
-   ![Gaussian Decoder](/assets/images/posts/2019-01-31-Gaussian-Decoder.jpg)
+   ![Gaussian Decoder](/assets/images/posts/2019-01-31-Gaussian-Decoder.JPG)
 
    The probability density funtion of a Gaussian distribution is as follows.
 
