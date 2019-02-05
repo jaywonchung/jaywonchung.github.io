@@ -9,7 +9,7 @@ categories:
 
 Vanilla autoencoders(AE), denoising autoencoders(DAE), and variational autoencoders(VAE) explained in this post. Referring to the [previous post](https://jaywonchung.github.io/study/machine-learning/MLE-and-ML/) on bayesian statistics may help your understanding.
 
-# Autoencoders(AE)
+# Autoencoders (AE)
 ## Structure
 ![Autoencoders](/assets/images/posts/2019-01-31-AE.png)
 
@@ -43,7 +43,7 @@ $$\theta^*, \theta^{\prime *} = \underset{\theta, \theta^\prime}{\text{argmin}} 
 
 where $$ q^0(X) $$ denotes the empirical distribution associated with our $$ N $$ training examples.
 
-# Denoising Autoencoders(DAE)
+# Denoising Autoencoders (DAE)
 ## Structure
 ![Denoising Autoencoders](/assets/images/posts/2019-01-31-DAE.png)
 
@@ -60,7 +60,7 @@ $$ \begin{aligned}
 
 where $$ q^0(X, \tilde{X}) = q^0(X)q_D(\tilde{X}\vert X) $$. Since we cannot compute the expectation in the second line, we approximate it with the Monte Carlo technique by drawing $$ L $$ samples and computing their mean loss.
 
-# Variational Autoencoders(VAE)
+# Variational Autoencoders (VAE)
 ## Structure
 
 VAEs actually have the same network structure with AEs; an encoder that calculates latent variable $$ z $$ and a decoder that generates output image $$ y $$. Also, we train both networks such that the output image and the input image are the same. However, their ultimate goal is what's different. The goal of an autoencoder is to generate the best feature vector $$ z $$ from a given image, whereas the goal of a variational autoencoder is to generate realistic images from vector $$ z $$.
