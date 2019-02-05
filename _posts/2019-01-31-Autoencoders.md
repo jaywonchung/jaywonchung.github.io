@@ -63,7 +63,7 @@ where $$ q^0(X, \tilde{X}) = q^0(X)q_D(\tilde{X}\vert X) $$. Since we cannot com
 # Variational Autoencoders(VAE)
 ## Structure
 
-VAEs actually have the same network structure with AEs; an encoder that calculates latent variable $$ z $$ and a decoder that generates output image $$ y $$. Also, we train both networks such that the output image the the input image are the same. However, their ultimate goal is what's different. The goal of an autoencoder is to generate the best feature vector $$ z $$ from a given image, whereas the goal of a variational autoencoder is to generate realistic images from vector $$ z $$.
+VAEs actually have the same network structure with AEs; an encoder that calculates latent variable $$ z $$ and a decoder that generates output image $$ y $$. Also, we train both networks such that the output image and the input image are the same. However, their ultimate goal is what's different. The goal of an autoencoder is to generate the best feature vector $$ z $$ from a given image, whereas the goal of a variational autoencoder is to generate realistic images from vector $$ z $$.
 
 Also, the network structure of AEs and VAEs are not exactly the same. The encoder of an AE directly calculates the latent variable $$ z $$ from the input. On the other hand, the encoder of a VAE calculates the parameters of a Gaussian distribution ( $$ \mu $$ and $$ \sigma $$), where we then sample our $$ z $$ from. This is true for the decoder too. AEs output the image itself, but VAE output parameters for the image pixel distribution. Let us put this more formally.
 
@@ -99,7 +99,7 @@ where
 
 $$ \text{ELBO}(\lambda) = \mathbb{E}_q \left[ \log (p(z, x)) \right] - \mathbb{E}_q\left[ \log(q_\lambda (z \vert x)) \right] $$
 
-KL divergences are always non-negative, and we want to minimize it with respect to $$ \lambda $$. This is equivalent to **maximizing the ELBO** with respect to $$ \lambda $$. The abbreviation is revealed: **E**vidence **L**ower **BO**und. This can also be understood as maximizing the evidence $$ p(x) $$, since we want to maximize the probability of getting the exact input image from the output.
+KL divergences are always non-negative, and we want to minimize it with respect to $$ \lambda $$. This is equivalent to **maximizing the ELBO** with respect to $$ \lambda $$. The abbreviation is revealed: **E**vidence **L**ower **BO**und. This can also be understood as maximizing the evidence $$ p(x) $$ since we want to maximize the probability of getting the exact input image from the output.
 
 ## ELBO
 
@@ -114,7 +114,7 @@ $$ \begin{aligned}
 &= \mathbb{E}_q \left[ \log (p(x_i \vert z)) \right] - D_{KL}(q_\lambda(z \vert x_i) \vert \vert p(z))
 \end{aligned}$$
 
-Now shifting our attention back to the network structure, our encdoer network calculates the parameters of $$ q_\lambda(z \vert x_i) $$, and our decoder network calculates the likelihood $$ p(x_i \vert z) $$. Thus we can rewrite the above results so that the parameters match those of the autoencoder described above.
+Now shifting our attention back to the network structure, our encoder network calculates the parameters of $$ q_\lambda(z \vert x_i) $$, and our decoder network calculates the likelihood $$ p(x_i \vert z) $$. Thus we can rewrite the above results so that the parameters match those of the autoencoder described above.
 
 $$ \text{ELBO}_i(\phi, \theta) = \mathbb{E}_{q_\phi} \left[ \log(p_\theta(x_i \vert z)) \right] - D_{KL}(q_\phi(z \vert x_i) \vert \vert p(z))$$
 
@@ -136,7 +136,7 @@ The second term is the Kullback-Leibler Divergence between the approximated post
 
 ![Learned Manifold](/assets/images/posts/2019-01-31-Learned-Manifold.JPG)
 
-The above plots 2-dimensional latent variables of 500 test images for an AE and a VAE. As you can see, the distribution of latent variables of VAEs are close to the standard normal distribution, which is due to the regularizer. This is a virtue because with this property, we can just easily sample a vector $$ z $$ from the standard normal distribution and feed it to the decoder network to generate a reasonable image. This is ideal because VAEs were intended as a generator in the first place.
+The above plots 2-dimensional latent variables of 500 test images for an AE and a VAE. As you can see, the distribution of latent variables of VAEs is close to the standard normal distribution, which is due to the regularizer. This is a virtue because, with this property, we can just easily sample a vector $$ z $$ from the standard normal distribution and feed it to the decoder network to generate a reasonable image. This is ideal because VAEs were intended as a generator in the first place.
 
 ## Calculating the loss function
 
@@ -169,12 +169,12 @@ Now let's look at the **reconstruction loss** term. To calculate the log-likelih
    &= \sum_{j=1}^D \left[x_{i,j} \log(p_{i,j}) + (1-x_{i,j})\log(1-p_{i,j}) \right]
    \end{aligned}$$
 
-   This is equivalent to the cross entropy loss.
+   This is equivalent to the cross-entropy loss.
 
 2. Multivariate Gaussian Distribution  
    ![Gaussian Decoder](/assets/images/posts/2019-01-31-Gaussian-Decoder.JPG)
 
-   The probability density funtion of a Gaussian distribution is as follows.
+   The probability density function of a Gaussian distribution is as follows.
 
    $$ f(x_{i,j};\mu_{i,j}, \sigma_{i,j}) = \frac{1}{\sqrt{2\pi\sigma_{i,j}^2}}e^{-\frac{(x_{i,j}-\mu_{i,j})^2}{2\sigma_{i,j}^2}} $$
 
@@ -192,8 +192,6 @@ For convenience, we use $$ L = 1 $$ in implementation.
 
 # Acknowledgements
 
-- Images in this post were borrowed from the following presentation by Hwalsuk Lee.
+- Images in this post were borrowed from the [presentation by Hwalsuk Lee](https://www.slideshare.net/NaverEngineering/ss-96581209).
 
-  [https://www.slideshare.net/NaverEngineering/ss-96581209](https://www.slideshare.net/NaverEngineering/ss-96581209)
-
-- I've implemented everything discussed here. Check out [my github repository](https://github.com/jaywonchung/Learning-ML).
+- I've implemented everything discussed here. Check out [my GitHub repository](https://github.com/jaywonchung/Learning-ML).
