@@ -144,7 +144,7 @@ To train our VAE, we should be able to calculate the loss. Let's start with the 
 
 ![Gaussian Encoder](/assets/images/posts/2019-01-31-Gaussian-Encoder.JPG)
 
-We create our encoder network such that it calculates the mean and standard variation of $$ q_\phi(z \vert x_i) $$. We then sample vector $$ z $$ from this Multivariate Gaussian distribution: $$ z \sim \mathcal{N}(\mu, \sigma^2 I) $$. 
+We create our encoder network such that it calculates the mean and standard deviation of $$ q_\phi(z \vert x_i) $$. We then sample vector $$ z $$ from this Multivariate Gaussian distribution: $$ z \sim \mathcal{N}(\mu, \sigma^2 I) $$. 
 
 The KL divergence between two normal distributions is [known](https://en.wikipedia.org/wiki/Kullback–Leibler_divergence#Multivariate_normal_distributions). The regularizer term can be calculated as follows.
 
