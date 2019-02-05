@@ -11,7 +11,7 @@ Vanilla autoencoders(AE), denoising autoencoders(DAE), and variational autoencod
 
 # Autoencoders(AE)
 ## Structure
-![Autoencoders](/assets/images/posts/2019-01-29-AE.png)
+![Autoencoders](https://github.com/jaywonchung/jaywonchung.github.io/blob/master/assets/images/posts/2019-01-31-AE.png)
 
 As seen in the above structure, autoencoders have the same input and output size. Ultimately we want the output to be the same as the input. We penalize the difference of the input $$ x $$ and the output $$ y $$.
 
