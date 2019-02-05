@@ -184,11 +184,11 @@ Now let's look at the **reconstruction loss** term. To calculate the log-likelih
 
    Notice that if we fix $$ \sigma_{i,j} = 1 $$, we obtain the square error.
 
-Now that we've calculated the posterior $$ p_\theta(x_i \vert z) $$, we can take a look at the whold reconstruction loss term. Unfortunately, the expectation is difficult to compute since it takes into account every possible $$ z $$. So we use the Monte Carlo approximation of expectation by sampling $$ L $$ $$ z_l $$'s from $$ q_\phi(z \vert x_i) $$ and take their mean log likelihood.
+Now that we've calculated the posterior $$ p_\theta(x_i \vert z) $$, we can take a look at the whole reconstruction loss term. Unfortunately, the expectation is difficult to compute since it takes into account every possible $$ z $$. So we use the Monte Carlo approximation of expectation by sampling $$ L $$ $$ z_l $$'s from $$ q_\phi(z \vert x_i) $$ and take their mean log likelihood.
 
 $$ \mathbb{E}_{q_\phi} \left[ \log p_\theta(x_i \vert z) \right] \approx \frac{1}{L} \sum_{l=1}^L \log p_\theta(x_i \vert z_l )$$
 
-For convenience, we use $$ L = 1 $$. 
+For convenience, we use $$ L = 1 $$ in implementation. 
 
 # Acknowledgements
 
