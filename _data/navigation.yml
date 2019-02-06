@@ -2,7 +2,7 @@
 main:
   - title: "Minimal-Mistakes Theme"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "About"
+  - title: "About me"
     url: /about/
   - title: "Categories"
     url: /categories/
