@@ -1,6 +1,6 @@
 ---
 title: "[Review] Data Science: Challenges and Directions"
-excerpt: "CACM August 2017"
+excerpt: "CACM August 2017. What is data science, and how should it change in accordance with the new wave of big data?"
 categories:
   - read
   - magazines
