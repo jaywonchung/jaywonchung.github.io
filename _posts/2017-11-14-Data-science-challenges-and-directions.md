@@ -2,8 +2,8 @@
 title: "[Review] Data Science: Challenges and Directions"
 excerpt: "CACM August 2017"
 categories:
-	- read
-	- magazines
+  - read
+  - magazines
 ---
 ## Article
 [Data Science: Challenges and Directions (Communications of the ACM, Volume 60 Issue 8, August 2017)](https://dl.acm.org/citation.cfm?id=3015456)
