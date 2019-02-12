@@ -1,6 +1,6 @@
 ---
 title: "[Review] An Introduction to Musical Metacreation"
-excerpt: "CIE Summer 2016"
+excerpt: "CIE Summer 2016. Can machines create music? Three points of careful consideration are provided."
 categories:
   - read
   - magazines
