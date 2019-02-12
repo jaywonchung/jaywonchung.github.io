@@ -12,5 +12,5 @@ categories:
 
 Refer to the following keynote presentation I've made:
 
-<blockquote class="embedly-card"><h4><a href="https://www.icloud.com/keynote/0cuzpcMsTfpNeFkqu_j2iILug">Keynote Presentation</a></h4></blockquote>
+<a class="embedly-card" data-card-controls="0" href="https://www.icloud.com/keynote/0cuzpcMsTfpNeFkqu_j2iILug">Keynote Presentation</a>
 <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
