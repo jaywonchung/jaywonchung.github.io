@@ -6,7 +6,7 @@ categories:
   - magazines
 ---
 ## Article
-[An Introduction to Musical Metacreation (Computers in Entertainment, Volume 16 Issue 2, Summer 2016)](https://dl.acm.org/citation.cfm?id=3023311)
+[An Introduction to Musical Metacreation (Computers in Entertainment, Volume 16 Issue 2, Summer 2016)](https://dl.acm.org/citation.cfm?id=2930672)
 
 ## Summary and Review
 Artificial Intelligence (AI) has been successful in solving rational problems that have optimal or near-optimal solutions. Now then, can machines exceed their creator and become creative?
