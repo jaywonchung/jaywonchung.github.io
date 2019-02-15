@@ -1,6 +1,6 @@
 ---
 title: "[Review] Ther's No Such Thing as a General-Purpose Processor"
-excerpt: "ACM Queue, October 2018. What is chosen often depends on how the choice is presented. What are the techniques and heuristics we can exploit?"
+excerpt: "ACM Queue, October 2018. There were, are, and will be no general purpose processors, according to the author."
 categories:
   - read
   - magazines
