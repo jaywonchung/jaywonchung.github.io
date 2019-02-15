@@ -1,6 +1,6 @@
 ---
 title: "[Review] Algorithms Behind Modern Storage Systems"
-excerpt: "ACM Ubiquity Symposium, February 2018. Technical article on the design of synthetic information environments."
+excerpt: "ACM Queue March+April 2018. Technical article on the data structures and algorithms used in modern storage systems."
 categories:
   - read
   - magazines
