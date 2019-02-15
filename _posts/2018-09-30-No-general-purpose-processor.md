@@ -1,5 +1,5 @@
 ---
-title: "[Review] Ther's No Such Thing as a General-Purpose Processor"
+title: "[Review] There's No Such Thing as a General-Purpose Processor"
 excerpt: "ACM Queue, October 2018. There were, are, and will be no general purpose processors, according to the author."
 categories:
   - read
@@ -7,7 +7,7 @@ categories:
 keynote: true
 ---
 ## Article
-[Ther's No Such Thing as a General-Purpose Processor (ACM Queue, October 2018)](https://dl.acm.org/citation.cfm?id=2687011)
+[There's No Such Thing as a General-Purpose Processor (ACM Queue, October 2018)](https://dl.acm.org/citation.cfm?id=2687011)
 
 ## Background Knowledge & Summary
 
