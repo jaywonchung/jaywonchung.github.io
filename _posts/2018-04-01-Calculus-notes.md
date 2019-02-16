@@ -1,6 +1,7 @@
 ---
 title: "미적분학 1,2 필기 공유"
 excerpt: "Giving out handwritten notes for Calculus 1 and 2"
+toc: false
 categories:
   - study
   - lectures
