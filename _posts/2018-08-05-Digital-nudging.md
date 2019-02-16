@@ -17,4 +17,4 @@ Today, most choices are being transferred to digital/internet environments. In s
 
 For details on such techniques and which heuristic they exploit, refer to the following keynote presentation I've made:
 
-<a class="embedly-card" data-card-controls="0" href="https://www.icloud.com/keynote/042Q2PJU2wK4AaxBdTc50_bkQ">Keynote Presentation</a>
+<a class="embedly-card" data-card-controls="0" href="https://www.icloud.com/keynote/0MluSw-ZDWvE1jUBvAnJkn8oQ">Keynote Presentation</a>
