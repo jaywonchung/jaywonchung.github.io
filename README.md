@@ -1,3 +1,9 @@
+# The customized part
+
+- MathJax support (+ equations are scaled down automatically on load if their width exceeds that of the screen)
+- Monokai code syntax highlighting + Source code pro font
+- Keynote embedding by embed.ly (with front matter ```keynote: true``` and embed.ly syntax (example: [markdown](https://github.com/jaywonchung/jaywonchung.github.io/blob/master/_posts/2018-06-24-Algorithms-behind-modern-storage-systems.md)/[post](https://jaywonchung.github.io/read/magazines/Algorithms-behind-modern-storage-systems/#background-knowledge--summary))
+
 # [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
