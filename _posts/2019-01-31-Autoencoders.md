@@ -1,13 +1,13 @@
 ---
-title: "Autoencoders, Denoising Autoencoders, and Variational Autoencoders"
+title: "The autoencoder family"
 layout: single
-excerpt: "AE, DAE, and VAE explained. Previous post on bayesian statistics may help your understanding."
+excerpt: "AE, DAE, VAE, and CVAE explained. The previous post on bayesian statistics may help your understanding."
 categories:
   - study
   - machine-learning
 ---
 
-Vanilla autoencoders(AE), denoising autoencoders(DAE), and variational autoencoders(VAE) explained in this post. Referring to the [previous post](https://jaywonchung.github.io/study/machine-learning/MLE-and-ML/) on bayesian statistics may help your understanding.
+Vanilla autoencoders(AE), denoising autoencoders(DAE), variational autoencoders(VAE), and conditional variational autoencoders(CVAE) are explained in this post. Referring to the [previous post](https://jaywonchung.github.io/study/machine-learning/MLE-and-ML/) on bayesian statistics may help your understanding.
 
 # Autoencoders (AE)
 ## Structure
@@ -189,6 +189,23 @@ Now that we've calculated the posterior $$ p_\theta(x_i \vert z) $$, we can take
 $$ \mathbb{E}_{q_\phi} \left[ \log p_\theta(x_i \vert z) \right] \approx \frac{1}{L} \sum_{l=1}^L \log p_\theta(x_i \vert z_l )$$
 
 For convenience, we use $$ L = 1 $$ in implementation. 
+
+# Conditional Variational Autoencoders (CVAE)
+## Structure
+
+The CVAE essentially has the same structure and loss function as the VAE, but the input data is a bit different. Notice that in VAEs, we never used the labels of our training data. If we have labels, why don't we use them?
+
+![Conditional Variational Autoencoders](/assets/images/posts/2019-01-31-CVAE.png)
+
+Now in conditional variational autoencoders, we concatenate the onehot labels with the input images, and also with the latent variables. Everything else is the same.
+
+## Implications
+
+What do we obtain by doing this? One good thing about this is that the latent variable no longer needs to encode which label the given input is. It only needs to encode its styles, or the **class-invariant features** of that image.
+
+Then, we can concatenate any onehot vector to generate an image of the intended class with the specific style encoded by the latent variable.
+
+For more images on generation, check out [my repository](https://github.com/jaywonchung/Learning-ML/tree/master/Implementations/Conditional-Variational-Autoencoder)'s README file. 
 
 # Acknowledgements
 
