@@ -7,7 +7,7 @@ categories:
   - machine-learning
 ---
 
-Vanilla autoencoders(AE), denoising autoencoders(DAE), variational autoencoders(VAE), and conditional variational autoencoders(CVAE) are explained in this post. Referring to the [previous post](https://jaywonchung.github.io/study/machine-learning/MLE-and-ML/) on bayesian statistics may help your understanding.
+Vanilla autoencoders(AE), denoising autoencoders(DAE), variational autoencoders(VAE), and conditional variational autoencoders(CVAE) are explained in this post. Referring to the [previous post](https://jaywonchung.github.io/study/machine-learning/MLE-and-ML/) on Bayesian statistics may help your understanding.
 
 # Autoencoders (AE)
 ## Structure
