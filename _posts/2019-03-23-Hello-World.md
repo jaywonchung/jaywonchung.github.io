@@ -1,11 +1,9 @@
 ---
 title: "Hello World!"
 excerpt: "A basic post written in markdown"
+comments: true
 ---
 
-# Markdown syntax for code snippets
-Different highlighting rules for different languages!
-
-```python
-print("{{ page.title }}")
-```
+# The content
+Everything here is the value of the “content”
+in ```_layouts/default.html```
