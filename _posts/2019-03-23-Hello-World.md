@@ -5,5 +5,4 @@ comments: true
 ---
 
 # The content
-Everything here is the value of the “content”
-in ```_layouts/default.html```
+Everything here is moved to the “content” in ```_layouts/default.html```
