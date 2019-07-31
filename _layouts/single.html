@@ -18,6 +18,16 @@ layout: default
   {% include embedly.html %}
 {% endif %}
 
+{% if page.ad %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9893011123817910",
+            enable_page_level_ads: true
+       });
+  </script>
+{% endif %}
+
 <div id="main" role="main">
   {% include sidebar.html %}
 
