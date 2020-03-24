@@ -11,3 +11,5 @@ A senior student majoring Electrical and Computer Engineering at Seoul National 
 I plan to study on through my degree and look for research opportunities. I will be applying for a Ph.D. position in the USA this year(2020). 
 
 When I'm free (and actually even when I'm not), I play the guitar. I've been playing fingerstyle since middle school. 
+
+<a href='/assets/attachments/Jaewon_Chung_resume.pdf' download>Résumé</a>
