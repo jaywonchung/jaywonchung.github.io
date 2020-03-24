@@ -10,6 +10,7 @@
   MathJax.Hub.Register.StartupHook("End",function () {
     var math_list = document.getElementsByClassName("MathJax_Display");
     for (var i = 0; i < math_list.length; ++i) {
+      math_list[i].stye.fontSize = 0.75em;
       var W = math_list[i].offsetWidth;
       var w = math_list[i].childNodes[0].offsetWidth;
       if (w > 0.95*W) {
