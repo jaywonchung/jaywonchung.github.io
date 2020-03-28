@@ -281,9 +281,10 @@ p {
         }
     }
     .pub-teaser {
-        margin-left: auto;
-        margin-right: auto;
-        width: 75%;
+        margin: auto;
+        margin-bottom: 6px;
+        display:block;
+        width: 85%;
     }
     }
 }
