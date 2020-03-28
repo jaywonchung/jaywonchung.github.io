@@ -255,10 +255,10 @@ p {
 .main-wrapper .company {
   margin-bottom: 10px;
   color: #97AAC3;
+}
 
-  a {
-    color: #97AAC3;
-  }
+.main-wrapper .company a {
+  color: #97AAC3;
 }
 
 .main-wrapper .project-title {
