@@ -211,6 +211,10 @@ p {
     .company {
         margin-bottom: 10px;
         color: $text-grey;
+
+        a {
+            color: $text-gray;
+        }
     }
     
     .project-title {
@@ -255,6 +259,16 @@ p {
 }
 
 
+
+.pubs {
+    .pub-title {
+        color: $text-color;
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+}
 
 
 .footer {
