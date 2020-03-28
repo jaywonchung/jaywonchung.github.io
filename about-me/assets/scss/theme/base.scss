@@ -274,12 +274,16 @@ p {
         }
     }
     .pub-desc {
-        margin-bottom: 5px;`
+        margin-bottom: 5px;
         color: $text-grey;
         a {
             color: $text-gray;
         }
     }
+    .pub-teaser {
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
     }
 }
 
