@@ -3,7 +3,7 @@ main:
   # - title: "Minimal-Mistakes Theme"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About me"
-    url: /about/
+    url: /about.html
   - title: "Categories"
     url: /categories/
   # - title: "Sample Collections"
