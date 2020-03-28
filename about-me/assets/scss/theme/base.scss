@@ -260,13 +260,15 @@ p {
 
 
 
-.pubs {
+.pubs-section {
+    .item {
     .pub-title {
         color: $text-color;
         font-size: 16px;
         margin-top: 0;
         margin-bottom: 0;
         font-weight: 500;
+    }
     }
 }
 
