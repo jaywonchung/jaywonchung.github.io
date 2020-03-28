@@ -305,7 +305,7 @@ p {
   background: #5f8697;
 }
 
-.pubs .pub-title {
+.pubs .item .pub-title {
   color: #3F4650;
   font-size: 16px;
   margin-top: 0;
@@ -313,7 +313,7 @@ p {
   font-weight: 500;
 }
 
-.pubs .pub-desc {
+.pubs .item .pub-desc {
   color: #97AAC3;
   margin-bottom: 5px;
 }
