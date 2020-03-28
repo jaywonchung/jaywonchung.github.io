@@ -269,6 +269,12 @@ p {
         margin-bottom: 0;
         font-weight: 500;
     }
+    .pub-desc {
+        color: $text-grey;
+        a {
+            color: $text-gray;
+        }
+    }
     }
 }
 
