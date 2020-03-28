@@ -259,6 +259,7 @@ p {
 
 .main-wrapper .company a {
   color: #97AAC3;
+  text-decoration: underline;
 }
 
 .main-wrapper .project-title {
