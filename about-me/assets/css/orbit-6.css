@@ -67,7 +67,10 @@ p {
 }
 
 .sidebar-wrapper .profile-container {
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   background: rgba(0, 0, 0, 0.2);
   text-align: center;
   color: #fff;
