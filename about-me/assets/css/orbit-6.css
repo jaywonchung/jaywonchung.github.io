@@ -321,6 +321,12 @@ p {
   color: #97AAC3; 
 }
 
+.pubs-section .item .pub-teaser {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
 .footer {
   padding: 30px;
   padding-top: 60px;
