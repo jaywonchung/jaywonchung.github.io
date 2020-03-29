@@ -305,7 +305,18 @@ p {
   background: #5f8697;
 }
 
-.pubs-section .item .pub-title {
+.pubs-section .pub-card {
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.pubs-section .pub-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.pubs-section .pub-card .pub-title {
   color: #3F4650;
   font-size: 16px;
   margin-top: 0;
@@ -313,15 +324,15 @@ p {
   font-weight: 500;
 }
 
-.pubs-section .item .pub-desc {
+.pubs-section .pub-card .pub-card-body .pub-desc {
   color: #97AAC3; 
 }
 
-.pubs-section .item .pub-desc a {
+.pubs-section .pub-card .pub-card-body .pub-desc a {
   color: #97AAC3; 
 }
 
-.pubs-section .item .pub-teaser {
+.pubs-section .pub-card .pub-card-teaser {
   margin: auto;
   margin-bottom: 6px;
   display:block;
