@@ -277,25 +277,25 @@ p {
         width: 85%;
     }
     
-    .pub-title {
-        color: $text-color;
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-weight: 500;
-        a {
-            color: $text-color;
-        }
-    }
-
     .pub-card-body {
-    .pub-desc {
-        margin-bottom: 5px;
-        color: $text-grey;
-        a {
-        color: $text-gray;
+        .pub-title {
+            color: $text-color;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: 500;
+            a {
+                color: $text-color;
+            }
         }
-    }
+
+        .pub-desc {
+            margin-bottom: 5px;
+            color: $text-grey;
+                a {
+                    color: $text-gray;
+                }
+        }
     }
     }
 }

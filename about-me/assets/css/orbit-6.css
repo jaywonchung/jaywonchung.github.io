@@ -316,7 +316,14 @@ p {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.pubs-section .pub-card .pub-title {
+.pubs-section .pub-card .pub-card-teaser {
+  margin: auto;
+  margin-bottom: 6px;
+  display:block;
+  width: 85%;
+}
+
+.pubs-section .pub-card .pub-card-body .pub-title {
   color: #3F4650;
   font-size: 16px;
   margin-top: 0;
@@ -324,19 +331,17 @@ p {
   font-weight: 500;
 }
 
+.pubs-section .pub-card .pub-card-body .pub-title a {
+  color: #3F4650;
+}
+
 .pubs-section .pub-card .pub-card-body .pub-desc {
+  margin-bottom: 5px;
   color: #97AAC3; 
 }
 
 .pubs-section .pub-card .pub-card-body .pub-desc a {
   color: #97AAC3; 
-}
-
-.pubs-section .pub-card .pub-card-teaser {
-  margin: auto;
-  margin-bottom: 6px;
-  display:block;
-  width: 85%;
 }
 
 .footer {
