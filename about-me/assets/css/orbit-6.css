@@ -320,13 +320,13 @@ p {
   margin: auto;
   margin-bottom: 6px;
   display:block;
-  width: 85%;
+  width: 95%;
 }
 
 .pubs-section .pub-card .pub-card-body .pub-title {
   color: #3F4650;
   font-size: 16px;
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 0;
   font-weight: 500;
 }
