@@ -74,6 +74,10 @@
 
   p {
     font-size: $type-size-5;
+
+    li p {
+      font-size: 1em;
+    }
   }
    
   li,
