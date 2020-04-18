@@ -74,10 +74,19 @@
 
   p {
     font-size: $type-size-5;
+  }
 
-    li p {
-      font-size: 1em;
-    }
+  /* Jaewon */
+  li > p {
+    font-size: 1em
+  }
+
+  li > ul > li{
+    font-size: 1em
+  }
+
+  li > ol > li{
+    font-size: 1em
   }
    
   li,
