@@ -77,18 +77,24 @@
   }
 
   /* Jaewon */
-  > li 
-    > p 
-      font-size: 1em
+  > li {
+    > p {
+      font-size: 1em;
+    }
+  }
 
   /* Jaewon */
   > li {
-    > ul 
-      > li 
-        font-size: 1em
-    > ol 
-      > li 
-        font-size: 1em
+    > ul {
+      > li {
+        font-size: 1em;
+      }
+    }
+    > ol {
+      > li {
+        font-size: 1em;
+      }
+    }
   }
    
   li,
