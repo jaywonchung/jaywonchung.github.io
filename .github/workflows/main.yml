@@ -1,0 +1,20 @@
+name: Download Latest Resume
+
+on:
+  repository_dispatch:
+    types: [resume-release]
+
+jobs:
+  resumeRelease:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Git repository
+      uses: actions/checkout@v2.3.1
+    - name: Download latest resume
+      run: curl -L https://github.com/jaywonchung/Resume/releases/latest/download/resume.pdf -o assets/attachments/Jaewon_Chung_resume.pdf
+    - name: Commit and push
+      run: |
+        git config --global user.name 'Jaewon Chung'
+        git config --global user.email 'jaywonchung@snu.ac.kr'
+        git commit -am 'Github Actions: New resume release'
+        git push
