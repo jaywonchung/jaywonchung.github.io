@@ -3,6 +3,7 @@
 - MathJax support (+ equations are scaled down automatically on load if their width exceeds that of the screen)
 - Monokai code syntax highlighting + Source code pro font
 - Keynote embedding by embed.ly (with front matter ```keynote: true``` and embed.ly syntax (example: [markdown, view raw](https://github.com/jaywonchung/jaywonchung.github.io/blob/master/_posts/2018-06-24-Algorithms-behind-modern-storage-systems.md) / [blog post](https://jaywonchung.github.io/read/magazines/Algorithms-behind-modern-storage-systems/#background-knowledge--summary))
+- Set up a Github Action that downloads the latest Resume from my Resume repository (https://github.com/jaywonchung/resume) and publishes it.
 
 # [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)
 
