@@ -17,5 +17,5 @@ jobs:
         git config --global user.name 'Jaewon Chung'
         git config --global user.email 'jaywonchung@snu.ac.kr'
         git add assets/attachments/Jaewon_Chung_resume.pdf
-        git commit -m 'Github Actions: New resume release'
+        git commit -m 'Github Actions: New resume release ${{ github.event.client_payload.version }}'
         git push
