@@ -150,6 +150,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
+    - label: "About me"
+      icon: "fab fa-fw fa-user"
+      url: "https://jaewonchung.me/about.html"
 
 
 # Reading Files
