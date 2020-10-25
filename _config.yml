@@ -129,7 +129,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - label: "About me"
-      icon: "fab fa-fw fa-user"
+      icon: "fa fa-user"
       url: "https://jaewonchung.me/about.html"
 
 # Site Footer
