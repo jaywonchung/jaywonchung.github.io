@@ -115,7 +115,7 @@ author:
       url: mailto:jaywonchung@snu.ac.kr
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://jaewonchung.me"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -128,6 +128,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "About me"
+      icon: "fab fa-fw fa-user"
+      url: "https://jaewonchung.me/about.html"
 
 # Site Footer
 footer:
