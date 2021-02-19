@@ -15,8 +15,8 @@ jobs:
     - name: Commit and push
       run: |
         git pull
-        git config --global user.name 'Jaewon Chung'
+        git config --global user.name 'Jae-Won Chung'
         git config --global user.email 'jaywonchung@snu.ac.kr'
-        git add assets/attachments/Jaewon_Chung_resume.pdf
+        git add assets/attachments/Jae-Won_Chung_resume.pdf
         git commit -m 'Github Actions: New resume release ${{ github.event.client_payload.version }}'
         git push
