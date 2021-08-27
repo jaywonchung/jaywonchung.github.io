@@ -11,12 +11,12 @@ jobs:
     - name: Checkout Git repository
       uses: actions/checkout@v2.3.1
     - name: Download latest resume
-      run: curl -L https://github.com/jaywonchung/Resume/releases/latest/download/resume.pdf -o assets/attachments/Jaewon_Chung_resume.pdf
+      run: curl -L https://github.com/jaywonchung/Resume/releases/latest/download/resume.pdf -o assets/attachments/Jae-Won_Chung_resume.pdf
     - name: Commit and push
       run: |
         git pull
         git config --global user.name 'Jae-Won Chung'
-        git config --global user.email 'jaywonchung@snu.ac.kr'
+        git config --global user.email 'jwnchung@umich.edu'
         git add assets/attachments/Jae-Won_Chung_resume.pdf
         git commit -m 'Github Actions: New resume release ${{ github.event.client_payload.version }}'
         git push
