@@ -214,7 +214,7 @@ p {
         color: $text-grey;
 
         a {
-            color: $text-gray;
+            color: $text-grey;
         }
     }
     
@@ -264,6 +264,7 @@ p {
 .pubs-section {
     .pub-card {
         padding: 15px;
+        margin-bottom: 15px;
         border-radius: 5px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
@@ -294,7 +295,7 @@ p {
             margin-bottom: 5px;
             color: $text-grey;
                 a {
-                    color: $text-gray;
+                    color: $text-grey;
                 }
         }
     }
