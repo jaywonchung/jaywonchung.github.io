@@ -1,7 +1,5 @@
-if [ ! "$(echo $0)" = "zsh" ]; then
-  echo Current login shell is $(echo $0). Changing to zsh.
-  sudo chsh -s $(which zsh) $(whoami)
-fi
+echo "Changing login shell to $(which zsh)"
+sudo chsh -s $(which zsh) $(whoami)
 
 if [ -n "$SSH" ]; then
   git clone --bare git@github.com:jaywonchung/dotfiles $HOME/.dotfiles
