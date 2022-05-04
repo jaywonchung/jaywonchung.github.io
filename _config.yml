@@ -151,7 +151,7 @@ footer:
       icon: "fas fa-fw fa-graduation-cap"
       url: "https://scholar.google.com/citations?user=xkSoEDYAAAAJ&hl=en"
     - label: "ORCID"
-      icon: "fab fa-fw fa-orcid"
+      icon: "fab fa-orcid"
       url: "https://orcid.org/0000-0001-5924-3427"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
