@@ -1,5 +1,6 @@
 ---
 title: "Appending the PhD Mindset"
+layout: single
 excerpt: "I heard that getting a PhD is about obtaining a certain mindset. Yet, the mindset should append, not replace."
 categories:
   - research
