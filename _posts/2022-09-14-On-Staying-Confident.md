@@ -26,8 +26,8 @@ And he said it was very good.
 Now I'm working on that idea, and just found last week that my hypothesis was true at least for a limited set of workloads, and the potential gains can be quite large.
 
 Looking back starting from April, when I submitted Zeus to NSDI, me as a researcher did not change that much.
-Most of the time I was on vacation, or was pouring time into polishing Zeus anyway.
-However, my level of confidence in terms of research capability fluctuated greatly, which didn't make any sense when I thought about it.
-If me in April and me today are similar, there is no reason to be sometimes confident and sometimes not.
+Most of the time I was on vacation, or was pouring time into polishing Zeus.
+However, my level of confidence in terms of research capability fluctuated greatly, which didn't make any sense.
+If me in April and me today are similar researchers, there is no reason to be sometimes confident and sometimes not.
 Rather, my confidence level should be determined by my best times, which is currently mid-July, when Zeus was accepted.
-External factors, for example whether my previous works or current ideas are well accepted by people, do not change my potential to do great work.
+External factors, for example whether my ideas are well accepted by people, do not change my potential to do great work.
