@@ -80,9 +80,34 @@
                 <ul class="list-unstyled interests-list">
                     <li>Software Systems</li>
                     <li>Deep Learning</li>
-                    <li>Fingerstyle Guitar</li>
+                    <li><span onclick="audio_button('Bluebird')"><i id="audio-bluebird-button" class="fas fa-play"></i></span> &nbsp; <span id="fingerstyle-guitar-text">Fingerstyle Guitar</span></li>
                 </ul>
             </div><!--//interests-->
+
+            <!-- Stuff for my fingerstyle guitar recodings -->
+            <audio id="audio-bluebird" src="/assets/audio/20221026_bluebird.mp3" preload="none"></audio>
+            <script>
+              var music_link_map = {
+                "Bluebird": "https://youtu.be/np-bLgaj5Ho",
+              }
+              function audio_button(title) {
+                var title_lower = title.toLowerCase();
+                var music = document.getElementById(`audio-${title_lower}`);
+                var button = document.getElementById(`audio-${title_lower}-button`);
+                var text = document.getElementById('fingerstyle-guitar-text');
+                if (music.paused) {
+                  music.play();
+                  button.classList.remove("fa-play");
+                  button.classList.add("fa-pause");
+                  text.innerHTML = `Me playing <a href='${music_link_map[title]}'><u>${title}</u></a>!`;
+                } else {
+                  music.pause();
+                  button.classList.remove("fa-pause");
+                  button.classList.add("fa-play");
+                  text.innerHTML = "Fingerstyle Guitar";
+                }
+              }
+            </script>
             
         </div><!--//sidebar-wrapper-->
         
