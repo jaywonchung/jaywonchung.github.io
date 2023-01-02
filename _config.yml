@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Jaewon's Blog"
+title                    : "Jae-Won's Blog"
 title_separator          : "|"
-name                     : "Jaewon Chung"
-description              : "Computers"
+name                     : "Jae-Won Chung"
+description              : "Jae-Won's Blog"
 url                      : "https://jaewonchung.me"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "jaywonchung/jaywonchung.github.io"
@@ -74,6 +74,7 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
+google_tag               : "G-16FDWTNYLJ"
 google_site_verification : "google744064dc20afaafc"
 bing_site_verification   :
 yandex_site_verification :
@@ -83,9 +84,9 @@ naver_site_verification  : "naverfaf50514275b4d54adbfac4f78e409ba"
 twitter:
   username               :
 facebook:
-  username               : "jaywonchung"
+  username               :
   app_id                 :
-  publisher              : "jaywonchung"
+  publisher              :
 og_image                 : /assets/images/avatar.png # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
@@ -104,27 +105,30 @@ analytics:
 
 # Site Author
 author:
-  name             : "Jaewon Chung"
+  name             : "Jae-Won Chung"
   avatar           : "/assets/images/profile.jpg"
   bio              : "It doesn't work until it works."
-  location         : "Seoul, South Korea"
+  location         : "Ann Arbor, Michigan"
   email            : 
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:jaywonchung@snu.ac.kr
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: "https://www.facebook.com/profile.php?id=100000547325554"
+    - label: "About me"
+      icon: "fas fa-fw fa-user"
+      url: "https://jaewonchung.me/about.html"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jaywonchung"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=xkSoEDYAAAAJ&hl=en"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jae-won-chung-4a8a80175/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/jaewon_chung_cs"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url: "https://www.facebook.com/profile.php?id=100000547325554"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -132,24 +136,21 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: "https://www.facebook.com/profile.php?id=100000547325554"
+    - label: "About me"
+      icon: "fas fa-fw fa-user"
+      url: "https://jaewonchung.me/about.html"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jaywonchung"
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=xkSoEDYAAAAJ&hl=en"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jae-won-chung-4a8a80175/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/jaewon_chung_cs"
 
 
 # Reading Files
@@ -217,7 +218,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Detroit # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
