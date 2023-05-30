@@ -31,7 +31,7 @@ Therefore, I try to make sure my advisor's context is initialized with a concise
 I think this is especially observable when I sometimes hear contradicting advice from my advisor.
 Not contradicting with my opinion, but with his own advice in the past.
 That's probably because the contexts I gave to my advisor that led to those contradictory advices were inconsistent in some way.
-Therefore, usually my next action is to prompt my advisor further to find out if there are any misunderstandings, whether it was in the previous meeting or this one.
+Therefore, usually my next action is to prompt my advisor further to find out if there are any misunderstandings, either in the previous meeting or this one.
 
 ## Fine-Tuning GPT
 
@@ -41,5 +41,5 @@ If I excite my advisor with some interesting observation or good result, they're
 Otherwise, they probably won't remember what happened during the last meeting.
 
 In that sense, I think it's an effective strategy to present my advisor with a concise summary of the end of the meeting.
-That way they don't have to summarize the entire meeting on their own for fine-tuning, but rather just use the takeaway messages I present.
+That way they don't have to summarize the entire meeting on their own for fine-tuning, but rather just directly use the takeaway messages I present.
 For that, I set forth a couple TODO bullets that are rooted on the core takeaways of this meeting and roughly represent what my advisor can expect for the next meeting.
