@@ -6,9 +6,5 @@ fi
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout master
 source .dotmodules/init.sh
 
-if [[ -f "/etc/redhat-release" ]]; then
-  dotfiles checkout rhel-server
-else
-  dotfiles checkout ubuntu-server
-fi
+dotfiles checkout linux-server
 zsh $HOME/.dotmodules/install/all.sh
