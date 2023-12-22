@@ -6,5 +6,5 @@ fi
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout master
 source .dotmodules/init.sh
 
-dotfiles checkout linux-server
+dotfiles checkout unified
 zsh $HOME/.dotmodules/install/all.sh
