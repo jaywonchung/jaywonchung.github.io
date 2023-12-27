@@ -101,9 +101,8 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
 	color: rgba(256, 256, 256, 0.9);
 	height: 220px;
 	.picture {
-		width: 220px;
+		height: 220px;
 	}
-		
 	.name {
 		font-size: 2.25rem;
 		font-weight: 900;
@@ -122,6 +121,7 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
 	
 	
 }
+
 .resume-social {
 	font-size: 0.875rem;
 
@@ -290,9 +290,9 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
 
 // Small devices
 @media (max-width: 920px) {
-    .resume-wrapper {
-	    padding-top: 0;
-    }
+  .resume-wrapper {
+    padding-top: 0;
+  }
 	
 	.resume-header {
 		height: auto;
@@ -303,6 +303,11 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
 
     .name, .title {
       text-align: center;
+    }
+
+    .header-link-container, .resume-social {
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
     }
   }
 }

@@ -11371,7 +11371,7 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   height: 220px;
 }
 .resume-header .picture {
-  width: 220px;
+  height: 220px;
 }
 .resume-header .name {
   font-size: 2.25rem;
@@ -11553,5 +11553,9 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   }
   .resume-header .name, .resume-header .title {
     text-align: center;
+  }
+  .resume-header .header-link-container, .resume-header .resume-social {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
 }
