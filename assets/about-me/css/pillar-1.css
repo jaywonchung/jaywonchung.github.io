@@ -11549,6 +11549,7 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
     height: auto;
   }
   .resume-header .picture {
+    padding-top: 1.5rem !important;
     border-radius: 4px;
   }
   .resume-header .name, .resume-header .title {
@@ -11557,5 +11558,14 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   .resume-header .header-link-container, .resume-header .resume-social {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
+  }
+  .resume-body {
+    padding: 2rem !important;
+  }
+  .resume-body .list-inline-item:not(:last-child) {
+    margin-right: 0.25rem;
+  }
+  .resume-body .resume-company-name {
+    margin-left: 0 !important;
   }
 }

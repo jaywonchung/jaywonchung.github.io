@@ -298,6 +298,7 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
 		height: auto;
 
     .picture {
+      padding-top: 1.5rem !important;
       @include border-radius(4px);
     }
 
@@ -308,6 +309,18 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
     .header-link-container, .resume-social {
       padding-left: 1.5rem !important;
       padding-right: 1.5rem !important;
+    }
+  }
+
+  .resume-body {
+    padding: 2rem !important;
+
+    .list-inline-item:not(:last-child) {
+      margin-right: 0.25rem;
+    }
+
+    .resume-company-name {
+      margin-left: 0 !important;
     }
   }
 }
