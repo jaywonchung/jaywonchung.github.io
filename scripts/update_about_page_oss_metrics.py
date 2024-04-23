@@ -17,11 +17,9 @@ REPOS = [
     "jaywonchung/pegasus",
 ]
 
-HTML_TEMPLATE = """
-                      <span class="resume-paper-venue mb-1">(<i class="far fa-star"></i>{stars} <i class="fas fa-code-branch"></i>{forks})</span>
+HTML_TEMPLATE = """                      <span class="resume-paper-venue mb-1">(<i class="far fa-star"></i>{stars} <i class="fas fa-code-branch"></i>{forks})</span>
 """
-LAST_UPDATED_TEMPLATE = """
-                  <div class="mb-3"><i>Number of stars and forks are as of {date}.</i></div>
+LAST_UPDATED_TEMPLATE = """                  <div class="mb-3"><i>Number of stars and forks are as of {date}.</i></div>
 """
 
 
