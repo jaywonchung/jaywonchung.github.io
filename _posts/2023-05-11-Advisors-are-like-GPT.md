@@ -40,6 +40,6 @@ So, I like to think that they take one fine-tuning step at the end of every meet
 If I excite my advisor with some interesting observation or good result, they're more likely to remember.
 Otherwise, they probably won't remember what happened during the last meeting.
 
-In that sense, I think it's an effective strategy to present my advisor with a concise summary of the end of the meeting.
+In that sense, I think it's an effective strategy to present my advisor with a concise summary at the end of the meeting.
 That way they don't have to summarize the entire meeting on their own for fine-tuning, but rather just directly use the takeaway messages I present.
-For that, I set forth a couple TODO bullets that are rooted on the core takeaways of this meeting and roughly represent what my advisor can expect for the next meeting.
+For that, I also try to set forth a couple TODO bullets that are rooted on the core takeaways of this meeting and roughly represent what my advisor can expect for the next meeting.

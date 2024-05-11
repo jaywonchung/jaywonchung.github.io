@@ -34,4 +34,4 @@ Then, my advisor would answer whether or not he agrees with what I said, or some
 
 All in all, before this mentorship experience, my perception of mentoring was that it's only good for me if it ends with some nice tangible outcome in a reasonable amount of time.
 However, now I feel like the process of mentorship taught me a lot about the relationship between me and my advisor, and allowed me to improve the productivity of the meetings with my advisor.
-Moreover, mentoring itself was an extremely rewarding process, where I could interact with enthusiastic junior researchers who are interested in my research. 
+Moreover, mentoring itself was an extremely rewarding process, where I could interact with enthusiastic junior researchers.
