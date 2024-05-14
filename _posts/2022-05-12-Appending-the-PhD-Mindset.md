@@ -34,5 +34,5 @@ One should make a conscious effort so that no existing mindset is completely rep
 Then, one must distinguish situations when it is more appropriate to apply the PhD mindset and when it is not in a fine-grained manner.
 
 Life, at least partly, can be viewed as a multi-task learning problem.
-While acquiring new capabilities is important, one must make sure not to catastrophically forget other important things in the process, which may not always be easy especially when the new capability requires an immense amount of concentrated effort to learn.
+While acquiring new capabilities is important, one must make sure not to [catastrophically forget](https://en.wikipedia.org/wiki/Catastrophic_interference) other important things in the process, which may not always be easy especially when the new capability requires an immense amount of concentrated effort to learn.
 However, I believe that such an effort is meaningful in advancing one's maturity as a person.
