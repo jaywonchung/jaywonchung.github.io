@@ -11372,6 +11372,9 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
 }
 .resume-header .picture {
   height: 220px;
+  border: 5px solid #58677c;
+  border-radius: 50%;
+  margin-left: 20px;
 }
 .resume-header .name {
   font-size: 2.25rem;
@@ -11549,8 +11552,9 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
     height: auto;
   }
   .resume-header .picture {
-    padding-top: 1.5rem !important;
-    border-radius: 4px;
+    height: 250px;
+    margin-top: 1.5rem !important;
+    margin-left: 0px;
   }
   .resume-header .name, .resume-header .title {
     text-align: center;
