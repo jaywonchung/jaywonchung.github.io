@@ -12,8 +12,8 @@ from datetime import datetime
 
 REPOS = [
     "jaywonchung/bert4rec-vae-pytorch",
-    "jaywonchung/reason",
     "ml-energy/zeus",
+    "jaywonchung/reason",
     "jaywonchung/pegasus",
 ]
 
