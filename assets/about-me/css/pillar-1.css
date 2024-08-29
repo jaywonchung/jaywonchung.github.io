@@ -11480,6 +11480,12 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   font-weight: bold;
 }
 
+.resume-talk-title {
+  font-size: 1.05rem;
+  color: #434E5E;
+  font-weight: bold;
+}
+
 .resume-timeline-item-desc-heading {
   font-size: 1rem;
 }
