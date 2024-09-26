@@ -52,7 +52,7 @@ Notice that we're removing the file creation date from the PDF metadata.
 ### SVG files
 
 ```python
-fig.savefig("plot.svg", metadata={"Date": None}, **kwargs)
+fig.savefig("plot.svg", metadata={"Date": None})
 ```
 
 The `savefig` call is basically the same for SVG, except that it needs a slightly different metadata key for the creation date.
