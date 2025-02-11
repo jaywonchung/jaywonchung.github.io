@@ -9,12 +9,12 @@ categories:
 
 I mean, my advisor is not a GPT model of course.
 However, talking with my advisor is not like just talking to my friend or colleague.
-Efficiently getting advice from him requires a certain mental model of how he thinks and acts, and I realized that it's sort of similar to prompting GPT models.
+Efficiently getting advice from him within bounded time requires a certain mental model of how he thinks and acts, and I realized that it's sort of similar to prompting GPT models.
 
 ## GPT is Stateless
 
-ChatGPT will remember the details of the conversation in the same thread, but that's only because they cram in the entire conversation in their context window.
-Outside that window, they are basically stateless; when you start a new conversation with ChatGPT, it'll have an empty context and won't remember anything about your previous conversations.
+GPT will remember the details of the conversation in the same thread, but that's only because they cram in the entire conversation in their context window.
+Outside that window, they are basically stateless; when you start a new conversation with GPT, it'll have an empty context and won't remember anything about your previous conversations.
 
 Advisors are often also stateless.
 Not that they're stateless intentionally or by design, but due to the sheer amount of things going on around them, it's more convenient for students to assume them to be stateless and forget everything.
@@ -23,7 +23,7 @@ It's just like how you don't ask ChatGPT, "Hey I think I asked you something abo
 ## Context is Important
 
 That's why initializing GPT's context right is important.
-You would have experienced some conversations with ChatGPT where you screwed up the initial description of your problem, and it takes more words than what would have taken if you had described it right in the first place in order to correct ChatGPT's understanding.
+You would have experienced some conversations with ChatGPT where you screwed up the initial description of your problem, and it takes more words to correct ChatGPT's understanding than what would have taken if you had described it right in the first place.
 In such cases you can just mutter "Crap." and click 'New Chat' (because ChatGPT is stateless).
 However, unfortunately, that's not so easy if you were talking to your advisor.
 Therefore, I try to make sure my advisor's context is initialized with a concise and accurate picture of where my research is.
