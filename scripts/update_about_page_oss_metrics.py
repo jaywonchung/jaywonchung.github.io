@@ -11,8 +11,9 @@ import requests
 from datetime import datetime
 
 REPOS = [
-    "jaywonchung/bert4rec-vae-pytorch",
     "ml-energy/zeus",
+    "cornserve-ai/cornserve",
+    "jaywonchung/bert4rec-vae-pytorch",
     "jaywonchung/reason",
     "jaywonchung/pegasus",
 ]
