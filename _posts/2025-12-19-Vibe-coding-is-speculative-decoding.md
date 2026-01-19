@@ -11,7 +11,7 @@ You find some weird parts about it and take the time to write down comments, onl
 I don't think this is a good answer.
 
 I treat AI-assisted programming or writing as an instance of speculative decoding.
-For those unfamiliar with the term, [*speculative decoding*](https://arxiv.org/abs/2211.17192) is a technique that speeds up LLM text generation by using a smaller, faster model (the *draft model*) to generate multiple tokens at once, and then having the original, larger model (the *verifier model*) accept or reject those tokens through rejection sampling.
+For those unfamiliar with the term, [*speculative decoding*](https://arxiv.org/abs/2211.17192) is a technique that speeds up LLM text generation by using a smaller, faster model (the *draft model*) to generate multiple tokens, and then having the original, larger model (the *verifier model*) accept or reject those tokens through rejection sampling.
 The crucial property of speculative decoding is that once we go through rejection sampling, the resulting accepted tokens *exactly* follow the distribution of the original larger model; there is no quality loss.
 
 When I use an AI coding assistant (e.g., Copilot, Cursor) to produce code, for instance, the AI model is the *draft model*, and I (the human programmer) am the *verifier model* that accepts or rejects AI-generated code based on whether they work correctly and fit my intent.
