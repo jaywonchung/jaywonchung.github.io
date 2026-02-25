@@ -13,6 +13,7 @@ from datetime import datetime
 REPOS = [
     "ml-energy/zeus",
     "cornserve-ai/cornserve",
+    "gpu2grid/openg2g",
     "jaywonchung/bert4rec-vae-pytorch",
     "jaywonchung/reason",
     "jaywonchung/pegasus",
