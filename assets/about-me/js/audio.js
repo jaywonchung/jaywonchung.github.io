@@ -8,8 +8,6 @@ function toggle_recordings() {
     recordings_activated = false;
   } else {
     player.style.display = "block";
-    var bluebird = player.querySelector("audio");
-    if (bluebird) bluebird.play();
     recordings_activated = true;
   }
 }

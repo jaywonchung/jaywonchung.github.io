@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>Jae-Won Chung | About Me</title>
+    <title>Jae-Won Chung</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Jae-Won's online CV">
+    <meta name="description" content="Jae-Won Chung builds efficient software systems for deep learning, with a focus on energy.">
     <meta name="author" content="Jae-Won Chung">    
     <link rel="icon" href="favicon.ico">
     <link rel="canonical" href="https://jaewonchung.me/about">
 
     <!-- Open Graph Meta -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Jae-Won Chung | About Me" />
-    <meta property="og:description" content="Jae-Won's online CV" />
+    <meta property="og:title" content="Jae-Won Chung" />
+    <meta property="og:description" content="Jae-Won Chung builds efficient software systems for deep learning, with a focus on energy." />
     <meta property="og:image" content="https://jaewonchung.me/assets/about-me/images/og_image.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://jaewonchung/about" />
+    <meta property="og:url" content="https://jaewonchung.me/about" />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Jae-Won Chung | About Me" />
-    <meta property="twitter:description" content="Jae-Won's online CV" />
+    <meta property="twitter:title" content="Jae-Won Chung" />
+    <meta property="twitter:description" content="Jae-Won Chung builds efficient software systems for deep learning, with a focus on energy." />
     <meta property="twitter:image" content="https://jaewonchung.me/assets/about-me/images/og_image.png" />
     
     <!-- Google Font -->
@@ -35,8 +35,34 @@
     <!-- JS for embedding guitar recordings -->
     <script defer src="assets/about-me/js/audio.js"></script>
        
-    <!-- Theme CSS -->  
+    <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/about-me/css/pillar-1.css">
+
+    <!-- Refined link styling: subtle underline at rest, emphatic on hover -->
+    <style>
+      a, a.text-link {
+        color: inherit;
+        text-decoration-line: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+        text-decoration-color: rgba(122, 143, 168, 0.5);
+        transition: text-decoration-color 0.2s, color 0.2s;
+      }
+      a:hover, a.text-link:hover {
+        text-decoration-color: #7a8fa8;
+        color: #58677c;
+      }
+      a:has(> .badge),
+      .header-link-container a,
+      .resume-social a {
+        text-decoration-line: none;
+      }
+      .header-link-container a:hover,
+      .resume-social a:hover {
+        text-decoration-line: underline;
+        text-decoration-color: #7a8fa8;
+      }
+    </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R408HY2GJ1"></script>
@@ -59,8 +85,8 @@
               <div class="col-lg-3 col-12 p-0 resume-picture-holder text-center text-lg-start">
                 <div class="profile-music-trigger" style="position: relative; display: inline-block; line-height: 0; cursor: pointer;" onclick="toggle_recordings()">
                   <img class="picture" src="assets/images/profile.jpg" alt="" style="transition: border-color 0.3s, box-shadow 0.3s;">
-                  <span class="music-badge" style="position: absolute; bottom: 16px; right: 16px; width: 28px; height: 28px; background: #7a8fa8; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; pointer-events: none; box-shadow: 0 1px 4px rgba(0,0,0,0.2);">
-                    <i class="fas fa-music" style="font-size: 0.7em; color: white;"></i>
+                  <span class="music-badge" style="position: absolute; bottom: 12px; right: 12px; color: #3e4f62; font-size: 0.95em; pointer-events: none; filter: drop-shadow(-0.5px -0.5px 0.6px rgba(255,255,255,0.4)) drop-shadow(0.8px 1.2px 1.6px rgba(0,0,0,0.55)); transition: transform 0.25s, color 0.25s, filter 0.25s;">
+                    <i class="fas fa-music"></i>
                   </span>
                 </div>
                 <style>
@@ -69,7 +95,9 @@
                     box-shadow: 0 0 8px rgba(122,143,168,0.4);
                   }
                   .profile-music-trigger:hover .music-badge {
-                    opacity: 1 !important;
+                    transform: scale(1.2);
+                    color: #7a8fa8 !important;
+                    filter: none !important;
                   }
                 </style>
               </div><!--//col-->
@@ -106,10 +134,10 @@
 				    <div class="resume-section-content">
               <p class="mb-2">I'm a fifth year PhD candidate in CSE at the University of Michigan. I build <b>efficient software systems for deep learning</b>, with a focus on the efficient management of not only time, but also <b>energy</b>.</p>
               <p class="mb-2">I view power and energy as fundamental systems resources that are worth carefully optimizing and allocating, not only in hardware, but also from software. Doing so provides automatic downstream benefits, such as reducing operational expenses, alleviating power delivery pressure for datacenters, and allowing the hardware to truly max out on performance.</p>
-              <p class="mb-0">I lead the <a class="text-link" href="https://ml.energy">ML.ENERGY initiative</a> as part of my research and open-source efforts. I am fortunate to be advised by <a class="text-link" href="https://mosharaf.com">Professor Mosharaf Chowdhury</a> and be part of <a class="text-link" href="https://symbioticlab.org">SymbioticLab</a>.</p>
+              <p class="mb-0">I created and lead the <a class="text-link" href="https://ml.energy">ML.ENERGY initiative</a> as part of my research and open-source efforts. I am fortunate to be advised by <a class="text-link" href="https://mosharaf.com">Professor Mosharaf Chowdhury</a> and be part of <a class="text-link" href="https://symbioticlab.org">SymbioticLab</a>.</p>
               <div id="audio-player" class="mt-3" style="display: none; border-left: 3px solid #58677c; padding-left: 12px;">
                 <div style="font-size: 0.85em; color: #58677c; margin-bottom: 8px;">
-                  <i class="fas fa-music me-1"></i>Fingerstyle Guitar
+                  <i class="fas fa-music me-1"></i>Some fingerstyle recordings
                   <span style="cursor: pointer; float: right; color: #aaa;" onclick="toggle_recordings()" onmouseover="this.style.color='#58677c'" onmouseout="this.style.color='#aaa'">
                     <i class="fas fa-times"></i>
                   </span>
@@ -251,7 +279,7 @@
               </section><!--//publications-section-->
 
               <section class="resume-section talks-section mb-5">
-                <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Selected Talks</h2>
+                <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Talks</h2>
 						    <div class="resume-section-content">
                   <div class="position-relative">
 
@@ -312,7 +340,7 @@
                       </ul>
                     </article>
 
-                    <article class="position-relative pb-2 ps-4">
+                    <article class="talk-hidden position-relative pb-2 ps-4">
                       <i class="resume-body-icon fa-regular fa-comments position-absolute" data-fa-transform="shrink-2"></i>
                       <span class="resume-talk-title mb-1">How to Create Mediocre Open-Source Repositories</span>
                       <p class="resume-paper-authors mb-1">University of Michigan (SymbioticLab lunch seminar) | August 2024</p>
@@ -323,7 +351,7 @@
                       </ul>
                     </article>
 
-                    <article class="position-relative pb-2 ps-4">
+                    <article class="talk-hidden position-relative pb-2 ps-4">
                       <i class="resume-body-icon fa-regular fa-comments position-absolute" data-fa-transform="shrink-2"></i>
                       <span class="resume-opensource-title mb-1">Energy-Efficient Software Systems for Machine Learning</span>
                       <p class="resume-paper-authors mb-1">Seoul National University | October 2023</p>
@@ -333,7 +361,7 @@
                       </ul>
                     </article>
 
-                    <article class="position-relative pb-2 ps-4">
+                    <article class="talk-hidden position-relative pb-2 ps-4">
                       <i class="resume-body-icon fa-regular fa-comments position-absolute" data-fa-transform="shrink-2"></i>
                       <span class="resume-opensource-title mb-1">Energy-Efficient Deep Learning with PyTorch and Zeus</span>
                       <p class="resume-paper-authors mb-1">PyTorch Conference | October 2023</p>
@@ -346,7 +374,7 @@
                       </ul>
                     </article>
 
-                    <article class="position-relative ps-4">
+                    <article class="talk-hidden position-relative ps-4">
                       <i class="resume-body-icon fa-regular fa-comments position-absolute" data-fa-transform="shrink-2"></i>
                       <span class="resume-opensource-title mb-1">Energy-Efficient Deep Learning with Zeus</span>
                       <p class="resume-paper-authors mb-1">Massachusetts Institute of Technology | September 2023</p>
@@ -356,21 +384,42 @@
                       </ul>
                     </article>
 
-                    <article class="position-relative ps-4">
-                      <i class="resume-body-icon fa-regular fa-comments position-absolute" data-fa-transform="shrink-2"></i>
-                      <span class="resume-talk-title mb-1">Memory Plus Meta-Learning</span>
-                      <p class="resume-paper-authors mb-1">Deepest | August 2019</p>
-                      <ul class="list-inline">
-                        <li class="list-inline-item"><span class="badge bg-secondary">ML</span></li>
-                        <li class="list-inline-item"><span class="badge bg-secondary">Meta-Learning</span></li>
-                        <li class="list-inline-item"><b>|</b></li>
-                        <li class="list-inline-item"><a href="https://jaewonchung.me/pdf.js/web/viewer.html?file=/assets/attachments/talks/20190831_memory_plus_meta_learning.pdf#pagemode=none"><span class="badge bg-secondary">Slides</span></a></li>
-                      </ul>
-                    </article>
-
                   </div>
+
+                  <style>
+                    .talks-section { position: relative; }
+                    .talks-section .talk-hidden { display: none; }
+                    .talks-section.talks-expanded .talk-hidden { display: block; }
+                    .talks-toggle {
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      background: none;
+                      border: 1px solid #dee2e6;
+                      color: #58677c;
+                      cursor: pointer;
+                      font-size: 0.8em;
+                      padding: 3px 12px;
+                      border-radius: 4px;
+                      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+                    }
+                    .talks-toggle:hover {
+                      background: #f8f9fa;
+                      color: #7a8fa8;
+                      border-color: #7a8fa8;
+                    }
+                  </style>
+                  <script>
+                    function toggle_talks() {
+                      const section = document.querySelector('.talks-section');
+                      const btn = document.getElementById('talks-toggle-btn');
+                      const expanded = section.classList.toggle('talks-expanded');
+                      btn.textContent = expanded ? 'Show fewer talks' : 'Show all talks';
+                    }
+                  </script>
                 </div>
-              </section><!--//opensource-section-->
+                <button id="talks-toggle-btn" class="talks-toggle" onclick="toggle_talks()">Show all talks</button>
+              </section><!--//talks-section-->
 
               <section class="resume-section opensource-section mb-5">
                 <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Open-Source Projects</h2>
@@ -413,7 +462,7 @@
                       <i class="resume-body-icon fas fa-code position-absolute" data-fa-transform="shrink-2"></i>
                       <span class="resume-opensource-title mb-1">OpenG2G</span>
                       <span class="resume-paper-venue mb-1">(<i class="far fa-star"></i>9 <i class="fas fa-code-branch"></i>0)</span>
-                      <p class="resume-paper-authors mb-1">A Modular simulation library for AI datacenter-grid interaction.</p>
+                      <p class="resume-paper-authors mb-1">A modular simulation library for AI datacenter-grid interaction.</p>
                       <ul class="list-inline">
                         <li class="list-inline-item"><span class="badge bg-secondary">Python</span></li>
                         <li class="list-inline-item"><b>|</b></li>
@@ -422,7 +471,7 @@
                       </ul>
                     </article>
 
-                    <article class="position-relative pb-2 ps-4">
+                    <article class="project-hidden position-relative pb-2 ps-4">
                       <i class="resume-body-icon fas fa-code position-absolute" data-fa-transform="shrink-2"></i>
                       <span class="resume-opensource-title mb-1">BERT4Rec-VAE-Pytorch</span>
                       <span class="resume-paper-venue mb-1">(<i class="far fa-star"></i>413 <i class="fas fa-code-branch"></i>98)</span>
@@ -436,7 +485,7 @@
                       </ul>
                     </article>
 
-                    <article class="position-relative pb-2 ps-4">
+                    <article class="project-hidden position-relative pb-2 ps-4">
                       <i class="resume-body-icon fas fa-code position-absolute" data-fa-transform="shrink-2"></i>
                       <span class="resume-opensource-title mb-1">Reason</span>
                       <span class="resume-paper-venue mb-1">(<i class="far fa-star"></i>197 <i class="fas fa-code-branch"></i>4)</span>
@@ -451,7 +500,7 @@
                       </ul>
                     </article>
 
-                    <article class="position-relative pb-2 ps-4">
+                    <article class="project-hidden position-relative pb-2 ps-4">
                       <i class="resume-body-icon fas fa-code position-absolute" data-fa-transform="shrink-2"></i>
                       <span class="resume-opensource-title mb-1">Pegasus</span>
                       <span class="resume-paper-venue mb-1">(<i class="far fa-star"></i>33 <i class="fas fa-code-branch"></i>3)</span>
@@ -466,7 +515,40 @@
                     </article>
 
                   </div>
+
+                  <style>
+                    .opensource-section { position: relative; }
+                    .opensource-section .project-hidden { display: none; }
+                    .opensource-section.projects-expanded .project-hidden { display: block; }
+                    .projects-toggle {
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      background: none;
+                      border: 1px solid #dee2e6;
+                      color: #58677c;
+                      cursor: pointer;
+                      font-size: 0.8em;
+                      padding: 3px 12px;
+                      border-radius: 4px;
+                      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+                    }
+                    .projects-toggle:hover {
+                      background: #f8f9fa;
+                      color: #7a8fa8;
+                      border-color: #7a8fa8;
+                    }
+                  </style>
+                  <script>
+                    function toggle_projects() {
+                      const section = document.querySelector('.opensource-section');
+                      const btn = document.getElementById('projects-toggle-btn');
+                      const expanded = section.classList.toggle('projects-expanded');
+                      btn.textContent = expanded ? 'Show fewer projects' : 'Show all projects';
+                    }
+                  </script>
                 </div>
+                <button id="projects-toggle-btn" class="projects-toggle" onclick="toggle_projects()">Show all projects</button>
               </section><!--//opensource-section-->
 
             </div><!--//main column-->
