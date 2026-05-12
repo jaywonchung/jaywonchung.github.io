@@ -3,43 +3,23 @@
 Assumptions:
 - The path to the about page is "about.html"
 - Each repo is ordered in the same order in the about page as in `REPOS`
-- "fa-code-branch" appear exactly `len(REPOS)` times in the about page, and the entire line that contains "fa-code-branch" will be replaced by the filled in `HTML_TEMPLATE`
-- "Number of stars and forks are as of" appears exactly once in the about page, and the entire line that contains "Number of stars and forks are as of" will be replaced by the filled in `LAST_UPDATED_TEMPLATE`
+- "fa-code-branch" appears exactly `len(REPOS)` times in the about page, and the entire line that contains "fa-code-branch" will be replaced by the filled in `HTML_TEMPLATE`
 """
 
 import requests
-from datetime import datetime
 
 REPOS = [
     "ml-energy/zeus",
     "cornserve-ai/cornserve",
     "gpu2grid/openg2g",
-    "jaywonchung/bert4rec-vae-pytorch",
+    "jaywonchung/BERT4Rec-VAE-Pytorch",
     "jaywonchung/reason",
     "jaywonchung/pegasus",
 ]
 
-HTML_TEMPLATE = """                      <span class="resume-paper-venue mb-1">(<i class="far fa-star"></i>{stars} <i class="fas fa-code-branch"></i>{forks})</span>
-"""
-LAST_UPDATED_TEMPLATE = """                  <div class="mb-3"><i>Number of stars and forks are as of {date}.</i></div>
+HTML_TEMPLATE = """                      <span class="resume-paper-venue mb-1" data-gh-repo="{repo}">(<i class="far fa-star"></i><span class="oss-stars">{stars}</span> <i class="fas fa-code-branch"></i><span class="oss-forks">{forks}</span>)</span>
 """
 
-
-def today() -> str:
-    """Returns today's date in a format like Febraury 13th, 2024."""
-    date = datetime.now()
-
-    month = date.strftime("%B")
-    
-    day = date.day
-    if 4 <= day <= 20 or 24 <= day <= 30:
-        suffix = "th"
-    else:
-        suffix = ["st", "nd", "rd"][day % 10 - 1]
-    
-    year = date.strftime(", %Y")
-    
-    return f"{month} {day}{suffix}{year}"
 
 def get_github_repo_stars_and_forks(repo):
     url = f"https://api.github.com/repos/{repo}"
@@ -49,17 +29,15 @@ def get_github_repo_stars_and_forks(repo):
     return data["stargazers_count"], data["forks_count"]
 
 def main():
-    stars_and_forks = [get_github_repo_stars_and_forks(repo) for repo in REPOS]
+    repo_metrics = [(repo, *get_github_repo_stars_and_forks(repo)) for repo in REPOS]
 
     with open("about.html", "r") as f:
         lines = f.readlines()
 
     for i, line in enumerate(lines):
         if "fa-code-branch" in line:
-            stars, forks = stars_and_forks.pop(0)
-            lines[i] = HTML_TEMPLATE.format(stars=stars, forks=forks)
-        elif "Number of stars and forks are as of" in line:
-            lines[i] = LAST_UPDATED_TEMPLATE.format(date=today())
+            repo, stars, forks = repo_metrics.pop(0)
+            lines[i] = HTML_TEMPLATE.format(repo=repo, stars=stars, forks=forks)
 
     with open("about.html", "w") as f:
         f.writelines(lines)
