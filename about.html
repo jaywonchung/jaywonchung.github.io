@@ -83,23 +83,48 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-3 col-12 p-0 resume-picture-holder text-center text-lg-start">
-                <div class="profile-music-trigger" style="position: relative; display: inline-block; line-height: 0; cursor: pointer;" onclick="toggle_recordings()">
-                  <img class="picture" src="assets/images/profile.jpg" alt="" style="transition: border-color 0.3s, box-shadow 0.3s;">
-                  <span class="music-badge" style="position: absolute; bottom: 12px; right: 12px; color: #3e4f62; font-size: 0.95em; pointer-events: none; filter: drop-shadow(-0.5px -0.5px 0.6px rgba(255,255,255,0.4)) drop-shadow(0.8px 1.2px 1.6px rgba(0,0,0,0.55)); transition: transform 0.25s, color 0.25s, filter 0.25s;">
+                <div id="fingerstyle" class="profile-music-trigger" style="position: relative; display: inline-block; line-height: 0; cursor: pointer;" onclick="toggle_recordings()">
+                  <img class="picture" src="assets/images/profile.jpg" alt="" style="transition: border-color 0.5s, box-shadow 0.5s;">
+                  <span class="music-badge" style="position: absolute; bottom: 12px; right: 12px; color: #3e4f62; font-size: 0.95em; pointer-events: none; filter: drop-shadow(-0.5px -0.5px 0.6px rgba(255,255,255,0.4)) drop-shadow(0.8px 1.2px 1.6px rgba(0,0,0,0.55)); transition: transform 0.5s, color 0.5s, filter 0.5s;">
                     <i class="fas fa-music"></i>
                   </span>
                 </div>
                 <style>
-                  .profile-music-trigger:hover .picture {
+                  .profile-music-trigger:hover .picture,
+                  .profile-music-trigger.fingerstyle-highlight .picture {
                     border-color: #7a8fa8 !important;
                     box-shadow: 0 0 8px rgba(122,143,168,0.4);
                   }
-                  .profile-music-trigger:hover .music-badge {
+                  .profile-music-trigger:hover .music-badge,
+                  .profile-music-trigger.fingerstyle-highlight .music-badge {
                     transform: scale(1.2);
                     color: #7a8fa8 !important;
                     filter: none !important;
                   }
                 </style>
+                <script>
+                  (function() {
+                    function flash_fingerstyle() {
+                      if (window.location.hash !== '#fingerstyle') return;
+                      var trigger = document.getElementById('fingerstyle');
+                      if (!trigger) return;
+                      requestAnimationFrame(function() {
+                        requestAnimationFrame(function() {
+                          trigger.classList.add('fingerstyle-highlight');
+                          setTimeout(function() {
+                            trigger.classList.remove('fingerstyle-highlight');
+                          }, 1100);
+                        });
+                      });
+                    }
+                    if (document.readyState === 'loading') {
+                      document.addEventListener('DOMContentLoaded', flash_fingerstyle);
+                    } else {
+                      flash_fingerstyle();
+                    }
+                    window.addEventListener('hashchange', flash_fingerstyle);
+                  })();
+                </script>
               </div><!--//col-->
               <div class="col">
                 <div class="row py-4 justify-content-center justify-content-md-between">
