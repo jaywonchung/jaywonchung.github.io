@@ -1,7 +1,7 @@
 ---
 title: "Prospective PhD Students, Intern Abroad!"
 layout: single
-excerpt: "I never quite imagined this was possible when I was a prospective CS PhD student."
+excerpt: "I never quite imagined this was possible when I was a prospective PhD student in Korea."
 categories:
   - thoughts
   - research
